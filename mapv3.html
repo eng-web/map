@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+</style><script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBxJ6SdyoXA8V_tYwnEnqC2N63sZOD_TZM&sensor=false&callback=initMap'></script> 
+ 
+<script> 
+    google.maps.event.addDomListener(window, 'load', init);
+    var map;
+    function init() {
+        var mapOptions = {
+            center: new google.maps.LatLng(40.35069,-74.651485),
+            zoom: 17,
+            zoomControl: true,
+            zoomControlOptions: {
+                style: google.maps.ZoomControlStyle.DEFAULT,
+            },
+            disableDoubleClickZoom: true,
+            mapTypeControl: true,
+            mapTypeControlOptions: {
+                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+            },
+            scaleControl: true,
+            scrollwheel: true,
+            panControl: true,
+            streetViewControl: true,
+            draggable : true,
+            overviewMapControl: true,
+            overviewMapControlOptions: {
+                opened: false,
+            },
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+        }
+        var mapElement = document.getElementById('engMap');
+        var map = new google.maps.Map(mapElement, mapOptions);
+        var locations = [
+['School of Engineering & Applied Science', 'The School of Engineering and Applied Science spans a number of buildings at the eastern edge of campus. The Engineering Quadrangle, or EQuad, is home to four of six departments: Chemical and Biological Engineering; Civil and Environmental Engineering; Electrical Engineering; and Mechanical and Aerospace Engineering. The Department of Computer Science is across Olden Street in its own building, as is the Department of Operations Research and Financial Engineering.', 'undefined', 'undefined', 'princeton.edu/engineering', 40.3505098, -74.65147734, 'https://mapbuildr.com/assets/img/markers/default.png'],['Department of Electrical Engineering', 'undefined', '(609) 258-3059', 'undefined', 'ee.princeton.edu', 40.35088592, -74.65111256, 'https://mapbuildr.com/assets/img/markers/default.png'],['Department of Mechanical and Aerospace Engineering', 'undefined', 'undefined', 'undefined', 'princeton.edu/mae', 40.3509595, -74.65032935, 'https://mapbuildr.com/assets/img/markers/default.png'],['Department of Civil & Environmental Engineering', 'undefined', 'undefined', 'undefined', 'http://www.princeton.edu/cee/', 40.3499211, -74.6511662, 'https://mapbuildr.com/assets/img/markers/default.png'],['Department of Chemical & Biological Engineering', 'undefined', 'undefined', 'undefined', 'http://www.princeton.edu/cbe/', 40.35040351, -74.65064049, 'https://mapbuildr.com/assets/img/markers/default.png'],['Department of Operations Research & Financial Planning', 'undefined', 'undefined', 'undefined', 'http://orfe.princeton.edu/', 40.34954498, -74.65270042, 'https://mapbuildr.com/assets/img/markers/default.png'],['Department of Computer Science', 'undefined', 'undefined', 'undefined', 'cs.princeton.edu', 40.35020727, -74.65222836, 'https://mapbuildr.com/assets/img/markers/default.png'],['Friend Center', 'undefined', 'undefined', 'undefined', 'undefined', 40.35031357, -74.65274334, 'https://mapbuildr.com/assets/img/markers/default.png'],['Keller Center for Innovation in Engineering Education', 'undefined', 'undefined', 'undefined', 'kellercenter.princeton.edu', 40.35028904, -74.65114474, 'https://mapbuildr.com/assets/img/markers/default.png'],['Andlinger Center for Energy and the Enviornment', 'undefined', 'undefined', 'undefined', 'acee.princeton.edu', 40.3500601, -74.65090871, 'https://mapbuildr.com/assets/img/markers/default.png'],['Hoyt Laboratory', 'undefined', 'undefined', 'undefined', 'undefined', 40.34960221, -74.65465844, 'https://mapbuildr.com/assets/img/markers/default.png'],['Bowen Hall', 'undefined', 'undefined', 'undefined', 'undefined', 40.34952045, -74.65032399, 'https://mapbuildr.com/assets/img/markers/default.png']
+        ];
+        for (i = 0; i < locations.length; i++) {
+      if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
+      if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
+      if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
+           if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
+           if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
+            marker = new google.maps.Marker({
+                icon: markericon,
+                position: new google.maps.LatLng(locations[i][5], locations[i][6]),
+                map: map,
+                title: locations[i][0],
+                desc: description,
+                tel: telephone,
+                email: email,
+                web: web
+            });
+if (web.substring(0, 7) != "http://") {
+link = "http://" + web;
+} else {
+link = web;
+}
+            bindInfoWindow(marker, map, locations[i][0], description, telephone, email, web, link);
+     }
+ function bindInfoWindow(marker, map, title, desc, telephone, email, web, link) {
+      var infoWindowVisible = (function () {
+              var currentlyVisible = false;
+              return function (visible) {
+                  if (visible !== undefined) {
+                      currentlyVisible = visible;
+                  }
+                  return currentlyVisible;
+               };
+           }());
+           iw = new google.maps.InfoWindow();
+           google.maps.event.addListener(marker, 'click', function() {
+               //Allows only one window to be open
+
+               iw.close();
+               if (infoWindowVisible()) {
+                   iw.close();
+                   infoWindowVisible(false);
+               } else {
+                   var html= "<div style='color:#000;background-color:#fff;width:100%;'><h1>"+title+"</h1><br><p>"+desc+"<p><br><p>"+telephone+"<p><a href='mailto:"+email+"' >"+email+"<a><a href='"+link+"'' >"+web+"<a></div>";
+                   iw = new google.maps.InfoWindow({content:html});
+                   iw.open(map,marker);
+                   infoWindowVisible(true);
+               }
+        });
+        google.maps.event.addListener(iw, 'closeclick', function () {
+            infoWindowVisible(false);
+        });
+ }
+}
+</script>
+<style>
+    /*sets full page view; remove if not necessary*/
+    /*html, body { height: 100%; margin: 0; padding: 0; }*/
+    #engMap {
+      /*height:100%;*/
+
+        /*Scale down*/
+        height:650px;
+        width:950px;
+    }
+    .gm-style-iw * {
+        display: block;
+        width: 100%;
+    }
+    .gm-style-iw h1, .gm-style-iw p {
+        margin: 0;
+        padding: 0;
+        width:auto;
+    }
+    .gm-style-iw a {
+        color: #4272db;
+    }
+</style>
+</head>
+<body>
+<div id='engMap'></div></body>
+</html>

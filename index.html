@@ -11,6 +11,7 @@
     <script type="text/javascript">
 
 function initMap() {
+  
   var engLatLng = {lat: 40.35046483, lng: -74.65148807};
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 40.350043, lng: -74.651515},
@@ -21,10 +22,10 @@ var engDescription = '<div id="content">'+
       '<div id="siteNotice">'+
       '</div>'+
       '<h1 id="firstHeading" class="firstHeading">School of Engineering and Applied Science</h1>'+
-      '<div id="bodyContent">'+
+      '<div id="bodyContent">' +
       '<p>The School of Engineering and Applied Science spans a number of buildings at the eastern edge of campus.</p>' +
       '<p>The Engineering Quadrangle, or EQuad, is home to four of six departments: Chemical and Biological Engineering; Civil and Enviromental Engineering; Electrical Engineering; and Mechanical and Aerospace Engineering. The Department of Computer Science is across Olden Street in its own building, as is the Department of Operations Research and Financial Engineering.</p>'+
-      '<p>The Princeton Institute for the Science and Technology of Materials is located in Bowen Hall.</p>'
+      '<p>The Princeton Institute for the Science and Technology of Materials is located in Bowen Hall.</p>' + '<p> <img src="signature.png" </p>' + 
       '</div>'+
       '</div>';
 
@@ -32,11 +33,14 @@ var engDescription = '<div id="content">'+
     content: engDescription
   });
 
+  var image = 'engineering_logo.png';
   var marker = new google.maps.Marker({
     position: engLatLng,
     map: map,
     title: 'School of Engineering and Applied Science'
   });
+
+
   marker.addListener('click', function() {
   infowindow.open(map, marker);
   });
@@ -48,8 +52,6 @@ var engDescription = '<div id="content">'+
     </script>
   </body>
 </html>
-
-
 
 <!--<!DOCTYPE html>
 <html>
