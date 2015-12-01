@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <head>
+<html lang="en">
+<meta name"viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBxJ6SdyoXA8V_tYwnEnqC2N63sZOD_TZM&sensor=false&callback=initMap'></script> 
 <script>
 // this variable will collect the html which will eventually be placed in the side_bar 
@@ -13,8 +23,10 @@
 function initialize() {
   // create the map
   var myOptions = {
-    zoom: 17,
-    center: new google.maps.LatLng(40.35069,-74.651485),
+    zoom: 18,
+    minZoom: 17,
+    maxZoom: 18,
+    center: new google.maps.LatLng(40.35014186, -74.65190649),
     mapTypeControl: true,
     mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
     navigationControl: true,
@@ -32,7 +44,7 @@ function initialize() {
   // Set up Engineering markers with info windows 
   // add the points    
   var schoolEng = new google.maps.LatLng(40.3505098, -74.65147734);
-  var marker = createMarker(schoolEng,"School of Engineering & Applied Science","<h3>School of Engineering & Applied Science</h3><p>The School of Engineering and Applied Science can trace its roots back to the School of Science, founded in 1872 by John Green. The first civil engineering chair was endowed by 1875 and its occupant, Charles MacMillan, founded the civil engineering department soon after. Cyrus Brackett, a physics professor, taught the first graduate course in engineering when he founded and lectured in the School of Electrical Engineering in 1889. <p>By 1912, there were enough civil and electrical engineers to form the Princeton Engineering Association, which promoted increased interest in engineering at Princeton. The University responded by forming the School of Engineering in 1921 under Dean Artuher Greene; four-year undergraduate programs were soon offered in civil, chemical, electrical, and mechanical and mining engineering. </p><p>The Engineering School moved into a home of its own in 1928 and for the next 34 years it resided in the Green Engineering Building (now Green Hall). By 1940, there were 379 engineering students and the concept of combining instruction in science and engineering fundamentals with liberal arts courses was well established.</p><p>In 1962,the School of Engineering and Applied Science, as it had come to be known, moved to the Engineering Quadrangle, which currently houses four of its six departments: Chemical and Biological Engineering, Civil and Environmental Engineering, Electrical Engineering, and Mechanical and Aerospace Engineering. Operations Research and Financial Engineering is across Olden Street in Sherrerd Hall. Computer Science occupies the building across Olden Street.</p><p>The School of Engineering and Applied Science is composed of six academic departments, one interdepartmental institute and a range of centers and programs that bring together people with a wide bariety of expertise and interests.</p><p><a target='_blank' href='http://www.princeton.edu/engineering/'>princeton.edu/engineering</a></p>")
+  var marker = createMarker(schoolEng,"School of Engineering & Applied Science","<h3>School of Engineering & Applied Science</h3><p>The School of Engineering and Applied Science can trace its roots back to the School of Science, founded in 1872 by John Green. The first civil engineering chair was endowed by 1875 and its occupant, Charles MacMillan, founded the civil engineering department soon after. Cyrus Brackett, a physics professor, taught the first graduate course in engineering when he founded and lectured in the School of Electrical Engineering in 1889. <p>By 1912, there were enough civil and electrical engineers to form the Princeton Engineering Association, which promoted increased interest in engineering at Princeton. The University responded by forming the School of Engineering in 1921 under Dean Artuher Greene; four-year undergraduate programs were soon offered in civil, chemical, electrical, and mechanical and mining engineering. </p><p>The Engineering School moved into a home of its own in 1928 and for the next 34 years it resided in the Green Engineering Building (now Green Hall). By 1940, there were 379 engineering students and the concept of combining instruction in science and engineering fundamentals with liberal arts courses was well established.</p><p>In 1962,the School of Engineering and Applied Science, as it had come to be known, moved to the Engineering Quadrangle, which currently houses four of its six departments: Chemical and Biological Engineering, Civil and Environmental Engineering, Electrical Engineering, and Mechanical and Aerospace Engineering. Operations Research and Financial Engineering is across Olden Street in Sherrerd Hall. Computer Science occupies the building across Olden Street.</p><p>The School of Engineering and Applied Science is composed of six academic departments, one interdepartmental institute and a range of centers and programs that bring together people with a wide variety of expertise and interests.</p><p><a target='_blank' href='http://www.princeton.edu/engineering/'>princeton.edu/engineering</a></p>")
 
   var deptCEE = new google.maps.LatLng(40.3499211, -74.6511662);
   var marker = createMarker(deptCEE,"Civil & Environmental Engineering","<h3>Civil & Environmental Engineering</h3><p>Civil and Environmental Engineering has several different tracks: Structural Engineering; Environmental Engineering; Geological Engineering; Architecture and Engineering; and Engineering and the Liberal Arts. A new semester-long program in Kenya has been developed for CEE majors at the <a target='_blank' href='http://www.mpala.org/'>Mpala Research Center</a> focusing on ecohydrology and biodiversity</p><p><a target='_blank' href='http://www.princeton.edu/cee/'>princeton.edu/cee</a></p>")  
@@ -63,6 +75,9 @@ function initialize() {
 
   var instPRISM = new google.maps.LatLng(40.34952045,-74.65035081);
   var marker = createMarker(instPRISM,"The Princeton Institute for the Science and Technology of Materials (PRISM)","<h3>The Princeton Institute for the Science and Technology of Materials (PRISM)</h3><p>PRISM at Princeton University was founded to address long term global and societal challenges through deeper understanding and invention in the world of materials and their applications. The core elements of our mission include research integrating the sciences and engineering to pursue new fields at the intersection of traditional disciplines, a seamless boundary between academia and industry, and the education of the next generation of leaders in the field.</p><p><a target='_blank' href='http://www.princeton.edu/prism/'>princeton.edu/prism</a></p>")
+
+  var labHoyt = new google.maps.LatLng(40.34964718, -74.65463161);
+  var marker = createMarker(labHoyt,"Hoyt Laboratory","<h3>Hoyt Laboratory</h3><p>ews.me totally blowing up on Twitter +1 5 praise erasers & how to avoid them digital first Ushahidi newsonomics Marshall McLuhan Dan Fleckner Gardening & War section tools go viral, if the news is that important, it'll find me we will make them pay hashtag a giant stack of newspapers that you'll never read Mozilla fourth estate semipermeable inverted pyramid Josh Marshall discuss. commons-based peer production horse-race coverage TechCrunch Quora totally blowing up on Twitter kitchen table of the future perfect for starting a campfire Pulse TweetDeck, Patch Ushahidi people formerly known as the audience engagement rubber cement WaPo Article Skimmer, election-night hologram cancel my subscription nonprofit Arianna Gutenberg parenthesis DocumentCloud Free Darko.</p><p><a target='_blank' href='/'>Reserved for link</a></p>") 
 
   var ctrFriend = new google.maps.LatLng(40.35031357, -74.65274334);
   var marker = createMarker(ctrFriend,"Friend Center for Engineering Education","<h3>Friend Center for Engineering Education</h3><p>The 70,000-square-foot Friend Center for Engineering Education was dedicated in 2001. It was designed by Henry N. Cobb of the renowed architectural firm Pei Cobb Freed & Partners and was established through a gift from Dennis J. Keller '63, chair and chief executive officer of DeVry Inc., in memory of Peter W. Friend '63. It is the principal classroom, library, and general computing facility of the School of Engineering and Applied Science, and many liberal arts classes also are held here. Downstairs are computer labs and classrooms, while on the ground floor is the Engineering Library.</p><p><a target='_blank' href='http://www.princeton.edu/prism/'>princeton.edu/prism</a></p>") 
@@ -97,23 +112,25 @@ function createMarker(latlng, name, html) {
     // save the info we need to use later for the side_bar
     gmarkers.push(marker);
     // add a line to the side_bar html
-    side_bar_html += '<li><a href="javascript:myclick(' + (gmarkers.length-1) + ')">' + name + '<\/a><\/li><br>';
+    side_bar_html += '<li><a href="javascript:myclick(' + (gmarkers.length-1) + ')">' + name + '<\/a><\/li><hr><br>';
 }
  
 
-    // This Javascript is based on code provided by the
-    // Community Church Javascript Team
+    // This Javascript is based on code provided by
     // http://www.bisphamchurch.org.uk/   
     // http://econym.org.uk/gmap/
     // from the v2 tutorial page at:
     // http://econym.org.uk/gmap/basic2.htm 
-//]]>
+//
 </script> 
 <style>
-#map_canvas {
-  width: 950px; height: 850px
+body {
+  margin:0px; padding:0px;
 }
-ul,li {
+#map_canvas {
+  width: 850px; height: 745px;
+}
+ul:first-child {
   list-style-type: none;
   display: block;
   -webkit-margin-before: 0em;
@@ -122,22 +139,64 @@ ul,li {
   -webkit-margin-end: 0px;
   -webkit-padding-start: 0px;
 }
-
+ul:not(:first-child) {
+  list-style-type: none;
+  display: block;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+    width:100%; 
+}
+li:first-child {
+  list-style-type:none;
+  margin-top:1.5em;
+}
+li:not(:first-child) {
+  list-style-type:none;
+  margin-top:-1.7em;
+  padding: .2em 0 .1em 0;
+}
+/*.side_bar {
+  width:100%;
+}
+.ul_side_bar {
+  width:100%;
+}*/
 </style>
   </head> 
-<body style="margin:0px; padding:0px;" onload="initialize()"> 
+<body onload="initialize()"> 
  
     <!-- you can use tables or divs for the overall layout --> 
-    <table border="1"> 
-      <tr> 
-        <td> 
-           <div id="map_canvas"></div> 
-        </td> 
-        <td valign="top" style="width:150px; text-decoration: underline; color: #4444ff;"> 
-           <div id="side_bar"><ul id="ul_side_bar"></ul></div> 
-        </td> 
-      </tr> 
-    </table> 
+    <!--<div class="container">-->
+      <!--<table border="1"> 
+          <tr> 
+            <td> 
+               <div id="map_canvas"></div> 
+            </td> 
+            <td valign="top" style="width:225px; text-decoration: underline; color: #4444ff;"> 
+               <div id="side_bar"><ul id="ul_side_bar"></ul></div> 
+            </td> 
+          </tr> 
+        </table>-->
+    <!--</div>--><!-- end container --> 
+
+    <!-- container -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8" id="map_canvas">map</div>
+        <div id="side_bar" class="col-md-3"><ul id="ul_side_bar"></ul></div>
+      </div>
+    </div>
  
     <noscript><p><b>JavaScript must be enabled in order for you to use Google Maps.</b> 
       However, it seems JavaScript is either disabled or not supported by your browser. 
