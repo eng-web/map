@@ -206,11 +206,17 @@ body {
     list-style: none;
 }
 
-.sidebar-nav li {
+.sidebar-nav li:first-child {
     text-indent: 20px;
-    line-height: 40px;
+    line-height: 20px;
+    padding-top: 20px;
 }
-
+.sidebar-nav li:not(:first-child) {
+    text-indent: 20px;
+    line-height: 20px;
+    margin-top: -10px;
+    padding-right: 20px;
+}
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
@@ -271,69 +277,9 @@ body {
         margin-right: 0;
     }
 }
-
-/*
-ul:first-child {
-  list-style-type: none;
-  display: block;
-  -webkit-margin-before: 0em;
-  -webkit-margin-after: 0em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
-  -webkit-padding-start: 0px;
-}
-ul:not(:first-child) {
-  list-style-type: none;
-  display: block;
-  -webkit-margin-before: 0em;
-  -webkit-margin-after: 0em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
-  -webkit-padding-start: 0px;
-}
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-    width:100%; 
-}
-li:first-child {
-  list-style-type:none;
-  margin-top:1.5em;
-}
-li:not(:first-child) {
-  list-style-type:none;
-  margin-top:-1.7em;
-  padding: .2em 0 .1em 0;
-}
-/*.side_bar {
-  width:100%;
-}
-.ul_side_bar {
-  width:100%;
-}*/
 </style>
   </head> 
 <body onload="initialize()"> 
- 
-    <!-- you can use tables or divs for the overall layout --> 
-    <!--<div class="container">-->
-      <!--<table border="1"> 
-          <tr> 
-            <td> 
-               <div id="map_canvas"></div> 
-            </td> 
-            <td valign="top" style="width:225px; text-decoration: underline; color: #4444ff;"> 
-               <div id="side_bar"><ul id="ul_side_bar"></ul></div> 
-            </td> 
-          </tr> 
-        </table>-->
-    <!--</div>--><!-- end container --> 
-
-    <!-- container -->
 
     <div id="wrapper">
       <div id="sidebar-wrapper">
