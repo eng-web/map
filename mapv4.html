@@ -2,18 +2,165 @@
 <head>
 <html lang="en">
 <meta name"viewport" content="width=device-width, initial-scale=1">
-<!-- Latest compiled and minified CSS -->
+<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBxJ6SdyoXA8V_tYwnEnqC2N63sZOD_TZM&sensor=false&callback=initMap'></script> 
+    <!-- Latest compiled and minified CSS 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<!-- Optional theme -->
+ Optional theme 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
-<!-- Latest compiled and minified JavaScript -->
+ Latest compiled and minified JavaScript 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBxJ6SdyoXA8V_tYwnEnqC2N63sZOD_TZM&sensor=false&callback=initMap'></script> 
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>-->
+<style>
+html, body {
+  margin:0; height: 100%; padding:0;
+  overflow-x: hidden;
+}
+/*.slicknav_menu {
+  display:none;
+}
+
+@media screen and (max-width: 40em) {
+  .js #menu {
+    display:none;
+  }
+  
+  .js .slicknav_menu {
+    display:block;
+  }
+}*/
+.navigation {
+    list-style: none;
+    background: #fff;
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    overflow: scroll;
+}
+.site-wrap {
+    min-width: 100%;
+    min-height: 100%;
+    background-color: #fff;
+    position: relative;
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    z-index: 1;
+}
+.nav-trigger {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+label[for="nav-trigger"] {
+    position: fixed;
+    top: 15px;
+    left: 0px;
+    z-index: 2;
+    width: 26px;
+    height: 51px;
+    cursor: pointer;
+    background-image: url("data:image/png;base64,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");
+    background-size: contain;
+}
+.nav-trigger:checked + label {
+  left: 299px;
+}
+.nav-trigger:checked ~ .site-wrap {
+  left: 300px;
+  /*box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);*/
+}
+.nav-trigger + label, .site-wrap {
+  transition: left 0.2s;
+}
+#map_canvas {
+  width: 100%;
+  height: 100vh;
+}
+ul:first-child {
+  list-style-type: none;
+  display: block;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px;
+}
+ul:not(:first-child) {
+  list-style-type: none;
+  display: block;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px;
+}
+li {
+  padding: 0 20px;
+}
+ul li:first-child {
+  list-style-type:none;
+  padding: 10px 20px 0px 20px;
+  /*margin-top:1.5em;*/
+}
+ul li:not(:first-child) {
+  list-style-type:none;
+  margin-top:-1.7em;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+    width:100%; 
+}
+.tooltip {
+  display: inline;
+  position: relative;
+}
+.tooltip:hover:before {
+    border: solid;
+    border-color: #333 transparent;
+    border-width: 6px 6px 0 6px;
+    bottom: 20px;
+    content: "";
+    left: 50%;
+    position: absolute;
+    z-index: 99;
+}
+.tooltip:hover:after {
+  background: #333;
+  background: rgba(0,0,0,.8);
+  border-radius: 5px;
+  bottom: 26px;
+  color: #fff;
+  content: attr(title);
+  left: 20%;
+  padding: 5px 15px;
+  position: absolute;
+  z-index: 98;
+  width: 220px;
+}
+
+/*.side_bar {
+  width:100%;
+}
+.ul_side_bar {
+  width:100%;
+}*/
+</style>
 <script>
 // this variable will collect the html which will eventually be placed in the side_bar 
       var side_bar_html = ""; 
+      var side_bar_mobile = "";
     
       // arrays to hold copies of the markers and html used by the side_bar 
       // because the function closure trick doesnt work there 
@@ -28,7 +175,7 @@ function initialize() {
     maxZoom: 18,
     center: new google.maps.LatLng(40.35014186, -74.65190649),
     mapTypeControl: true,
-    mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+    mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU, position: google.maps.ControlPosition.TOP_CENTER},
     navigationControl: true,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     styles: [{"featureType": "water","elementType": "geometry","stylers": [{ "color": "#193341" }]},{"featureType": "landscape","elementType": "geometry","stylers": [{ "color": "#2c5a71" }]},{"featureType": "road","elementType": "geometry","stylers": [{ "color": "#29768a" },{ "lightness": -37 }]},{"featureType": "poi","elementType": "geometry","stylers": [{ "color": "#406d80" }]},{"featureType": "transit","elementType": "geometry","stylers": [{ "color": "#406d80" }]},{"elementType": "labels.text.stroke","stylers": [{ "visibility": "on" },{ "color": "#3e606f" },{ "weight": 2 },{ "gamma": 0.84 }]},{"elementType": "labels.text.fill","stylers": [{ "color": "#ffffff" }]},{"featureType": "administrative","elementType": "geometry","stylers": [{ "weight": 0.6 },{ "color": "#1a3541" }]},{"elementType": "labels.icon","stylers": [{ "visibility": "off" }]},{"featureType": "poi.park","elementType": "geometry","stylers": [{ "color": "#2c5a71" }]}],
@@ -84,6 +231,9 @@ function initialize() {
 
   // put the assembled side_bar_html contents into the side_bar div
   document.getElementById("ul_side_bar").innerHTML = side_bar_html;
+  document.getElementById("ul_side_bar_mobile").innerHTML = side_bar_mobile;
+
+
 }
  
 var infowindow = new google.maps.InfoWindow(
@@ -113,6 +263,7 @@ function createMarker(latlng, name, html) {
     gmarkers.push(marker);
     // add a line to the side_bar html
     side_bar_html += '<li><a href="javascript:myclick(' + (gmarkers.length-1) + ')">' + name + '<\/a><\/li><hr><br>';
+    side_bar_mobile += '<li><a href="javascript:myclick(' + (gmarkers.length-1) + ')">' + name + '<\/a><\/li><hr><br>';
 }
  
 
@@ -123,57 +274,7 @@ function createMarker(latlng, name, html) {
     // http://econym.org.uk/gmap/basic2.htm 
 //
 </script> 
-<style>
-body {
-  margin:0px; padding:0px;
-}
-#map_canvas {
-  width: 850px; height: 745px;
-}
-ul:first-child {
-  list-style-type: none;
-  display: block;
-  -webkit-margin-before: 0em;
-  -webkit-margin-after: 0em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
-  -webkit-padding-start: 0px;
-}
-ul:not(:first-child) {
-  list-style-type: none;
-  display: block;
-  -webkit-margin-before: 0em;
-  -webkit-margin-after: 0em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
-  -webkit-padding-start: 0px;
-}
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-    width:100%; 
-}
-li:first-child {
-  list-style-type:none;
-  margin-top:1.5em;
-}
-li:not(:first-child) {
-  list-style-type:none;
-  margin-top:-1.7em;
-  padding: .2em 0 .1em 0;
-}
-/*.side_bar {
-  width:100%;
-}
-.ul_side_bar {
-  width:100%;
-}*/
-</style>
-  </head> 
+</head> 
 <body onload="initialize()"> 
  
     <!-- you can use tables or divs for the overall layout --> 
@@ -190,19 +291,40 @@ li:not(:first-child) {
         </table>-->
     <!--</div>--><!-- end container --> 
 
-    <!-- container -->
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8" id="map_canvas">map</div>
-        <div id="side_bar" class="col-md-3"><ul id="ul_side_bar"></ul></div>
-      </div>
-    </div>
- 
+
+    <!-- old mobile -->
+    <!--<div id="side_bar" class="col-md-3"><ul id="ul_side_bar_mobile"></ul></div>-->
+<ul id="ul_side_bar" class="navigation">
+</ul>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" <a title="Expand side panel" class="tooltip"></a></label>
+  
+    
+    <div class="site-wrap">
+      <!--<div class="container"> container -->
+        <!--<div class="row">-->
+          <div id="map_canvas"></div>
+          <!--<div id="side_bar" class="col-md-3"><ul id="ul_side_bar"></ul></div>-->
+        </div>
+     <!-- </div>end container -->
+    <!--</div>-->
+  
+
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="jquery.slicknav.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#menu').slicknav();
+});
+</script>
+
     <noscript><p><b>JavaScript must be enabled in order for you to use Google Maps.</b> 
       However, it seems JavaScript is either disabled or not supported by your browser. 
       To view Google Maps, enable JavaScript by changing your browser options, and then 
       try again.</p>
-    </noscript> 
+    </noscript>-->
+
 
   </body> 
 </html> 
