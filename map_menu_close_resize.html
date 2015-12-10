@@ -15,8 +15,8 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBxJ6SdyoXA8V_tYwnEnqC2N63sZOD_TZM&sensor=false&callback=initMap'></script> 
-    <!-- Custom CSS -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <!-- Custom CSS 
+    <link href="css/simple-sidebar.css" rel="stylesheet">-->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -84,7 +84,7 @@ function initialize() {
   var deptORFE = new google.maps.LatLng(40.34954498, -74.65270042);
   var marker = createMarker(deptORFE,"Operations Research & Financial Engineering","<h3>Operations Research & Financial Engineering</h3><p>Opened in 2008, Sherrerd Hall was designed by Frederick Fisher and Partners and was the gift of John J.F. Sherrerd '52. Operations Research involves the application of mathematical tools such as statistics and optimization to problems in transportation, manufacturing, business, and management. Financial Engineering is the relatively new idea that these same tools can be applied to financial instruments and strategies. Advances in computing and information technology have made these fields important in solving complex management problems. Sherrerd Hall also houses the Center for Information Technology Policy.</p><p><a target='_blank' href='http://orfe.princeton.edu/'>orfe.princeton.edu</a></p>")
 
-  var ctrACEE = new google.maps.LatLng(40.3500601, -74.65090871);
+  var ctrACEE = new google.maps.LatLng(40.34931195, -74.65091944);
   var marker = createMarker(ctrACEE,"Andlinger Center for Energy and the Environment","<h3>Andlinger Center for Energy and the Environment</h3><p>The Andlinger Center for Energy and the Environment supports a vibrant and expanding program of research and teaching in the areas of sustainable energy development, energy efficiency, and environmental protection and remediation related to energy.</p><p><a target='_blank' href='http://acee.princeton.edu/'>acee.princeton.edu</a></p>")
 
   var ctrCITP = new google.maps.LatLng(40.34956951,-74.65244293);
@@ -100,7 +100,7 @@ function initialize() {
   var marker = createMarker(labHoyt,"Hoyt Laboratory","<h3>Hoyt Laboratory</h3><p>ews.me totally blowing up on Twitter +1 5 praise erasers & how to avoid them digital first Ushahidi newsonomics Marshall McLuhan Dan Fleckner Gardening & War section tools go viral, if the news is that important, it'll find me we will make them pay hashtag a giant stack of newspapers that you'll never read Mozilla fourth estate semipermeable inverted pyramid Josh Marshall discuss. commons-based peer production horse-race coverage TechCrunch Quora totally blowing up on Twitter kitchen table of the future perfect for starting a campfire Pulse TweetDeck, Patch Ushahidi people formerly known as the audience engagement rubber cement WaPo Article Skimmer, election-night hologram cancel my subscription nonprofit Arianna Gutenberg parenthesis DocumentCloud Free Darko.</p><p><a target='_blank' href='http://princeton.edu/engineering'>Reserved for link</a></p>") 
 
   var ctrFriend = new google.maps.LatLng(40.35031357, -74.65274334);
-  var marker = createMarker(ctrFriend,"Friend Center for Engineering Education","<h3>Friend Center for Engineering Education</h3><p>The 70,000-square-foot Friend Center for Engineering Education was dedicated in 2001. It was designed by Henry N. Cobb of the renowed architectural firm Pei Cobb Freed & Partners and was established through a gift from Dennis J. Keller '63, chair and chief executive officer of DeVry Inc., in memory of Peter W. Friend '63. It is the principal classroom, library, and general computing facility of the School of Engineering and Applied Science, and many liberal arts classes also are held here. Downstairs are computer labs and classrooms, while on the ground floor is the Engineering Library.</p><p><a target='_blank' href='http://princeton.edu/engineering'>Reserved for link</a></p>") 
+  var marker = createMarker(ctrFriend,"Friend Center","<h3>Friend Center</h3><p>The 70,000-square-foot Friend Center for Engineering Education was dedicated in 2001. It was designed by Henry N. Cobb of the renowed architectural firm Pei Cobb Freed & Partners and was established through a gift from Dennis J. Keller '63, chair and chief executive officer of DeVry Inc., in memory of Peter W. Friend '63. It is the principal classroom, library, and general computing facility of the School of Engineering and Applied Science, and many liberal arts classes also are held here. Downstairs are computer labs and classrooms, while on the ground floor is the Engineering Library.</p><p><a target='_blank' href='http://princeton.edu/engineering'>Reserved for link</a></p>") 
 
   // put the assembled side_bar_html contents into the side_bar div
   document.getElementById("ul_side_bar").innerHTML = side_bar_html;
@@ -155,6 +155,7 @@ html, body {
 
 img {
   padding: 5px 25px;
+  margin-top:2.5px;
 }
 /*!
  * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
@@ -205,39 +206,62 @@ img {
     position: absolute;
     margin-right: -250px;
 }
-
+#sidebar-bottom-wrapper {
+    bottom:0;
+    z-index:1000;
+    position: fixed;
+    left: 250px;
+    width: 22%;
+    height: 5%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #fff;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    clear:both;
+}
 /* Sidebar Styles */
-
+hr {
+    display: block;
+    height: 0.3px;
+    border: 0;
+    border-top: 1px solid #A4A4A4;
+    margin: 1em 0;
+    padding: 0; 
+}
 .sidebar-nav {
     position: absolute;
     top: 0;
     width: 300px;
-    margin: 30px 0 0 0;
+    margin: 145px 0 0 0;
     padding: 0;
     list-style: none;
+    background-color:#fff;
 }
 
 .sidebar-nav li:first-child {
     text-indent: 20px;
     line-height: 20px;
-    padding-top: 20px;
+    padding-top: 15px;
 }
 .sidebar-nav li:not(:first-child) {
     text-indent: 20px;
     line-height: 20px;
-    margin-top: -10px;
+    margin-top: -15px;
     padding-right: 20px;
 }
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    color: #000;
     text-align: center;
 }
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
+    color: #F06B1E;
     background: rgba(255,255,255,0.2);
 }
 
@@ -245,11 +269,39 @@ img {
 .sidebar-nav li a:focus {
     text-decoration: none;
 }
-
+.sidebar-nav-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 300px;
+    margin: 0 0 -200px 0;
+    padding: 0;
+    list-style: none;
+    background-color:#fff;
+    height:100px;
+}
+.sidebar-brand {
+    position: absolute;
+    top: 0;
+    width: 300px;
+    height: auto;
+    margin: 0 0 0 0;
+    padding: 0;
+    list-style: none;
+    background-color:#fff;
+}
+.sidebar-brand-bottom {
+    position: relative;
+    width: 300px;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+}
+/*
 .sidebar-nav > .sidebar-brand {
     height: 65px;
     font-size: 18px;
     line-height: 60px;
+    color:#fff;
 }
 
 .sidebar-nav > .sidebar-brand a {
@@ -259,7 +311,7 @@ img {
 .sidebar-nav > .sidebar-brand a:hover {
     color: #fff;
     background: none;
-}
+}*/
 
 @media(min-width:768px) {
     #wrapper {
@@ -294,9 +346,13 @@ img {
 
     <div id="wrapper">
       <div id="sidebar-wrapper">
-        <img src="img/pusig_white_os.png">
-        <ul class="sidebar-nav" id="ul_side_bar"></ul>
-      </div>
+              <div class="sidebar-brand">
+                <img src="img/Princeton-Engineering-4-Line.svg" class="img-responsive"><hr>
+              </div><!-- sidebar-brand -->
+          <ul class="sidebar-nav" id="ul_side_bar"></ul>
+       
+      </div> <!-- sidebar wrapper -->
+
 
       <!-- Page Content -->
         <div id="page-content-wrapper">
