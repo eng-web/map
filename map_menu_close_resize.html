@@ -36,7 +36,7 @@
 function initialize() {
   // create the map
   var myOptions = {
-    zoom: 17,
+    zoom: 18,
     minZoom: 17,
     maxZoom: 18,
     center: new google.maps.LatLng(40.35014186, -74.65190649),
@@ -49,16 +49,22 @@ function initialize() {
   }
   map = new google.maps.Map(document.getElementById("map_canvas"),
                                 myOptions);
- 
+  google.maps.event.addDomListener(window, 'resize', function() {
+    "use strict";
+    window.location.reload();
+  });
+  google.maps.event.addDomListener(window, 'load', initialize);
   google.maps.event.addListener(map, 'click', function() {
         infowindow.close();
         });
+
+
 
   // Add markers to the map
   // Set up Engineering markers with info windows 
   // add the points    
   var schoolEng = new google.maps.LatLng(40.3505098, -74.65147734);
-  var marker = createMarker(schoolEng,"School of Engineering & Applied Science","<h3>School of Engineering & Applied Science</h3><p>The School of Engineering and Applied Science can trace its roots back to the School of Science, founded in 1872 by John Green. The first civil engineering chair was endowed by 1875 and its occupant, Charles MacMillan, founded the civil engineering department soon after. Cyrus Brackett, a physics professor, taught the first graduate course in engineering when he founded and lectured in the School of Electrical Engineering in 1889. <p>By 1912, there were enough civil and electrical engineers to form the Princeton Engineering Association, which promoted increased interest in engineering at Princeton. The University responded by forming the School of Engineering in 1921 under Dean Artuher Greene; four-year undergraduate programs were soon offered in civil, chemical, electrical, and mechanical and mining engineering. </p><p>The Engineering School moved into a home of its own in 1928 and for the next 34 years it resided in the Green Engineering Building (now Green Hall). By 1940, there were 379 engineering students and the concept of combining instruction in science and engineering fundamentals with liberal arts courses was well established.</p><p>In 1962,the School of Engineering and Applied Science, as it had come to be known, moved to the Engineering Quadrangle, which currently houses four of its six departments: Chemical and Biological Engineering, Civil and Environmental Engineering, Electrical Engineering, and Mechanical and Aerospace Engineering. Operations Research and Financial Engineering is across Olden Street in Sherrerd Hall. Computer Science occupies the building across Olden Street.</p><p>The School of Engineering and Applied Science is composed of six academic departments, one interdepartmental institute and a range of centers and programs that bring together people with a wide variety of expertise and interests.</p><p><a target='_blank' href='http://www.princeton.edu/engineering/'>princeton.edu/engineering</a></p>")
+  var marker = createMarker(schoolEng,"School of Engineering & Applied Science","<h3>School of Engineering & Applied Science</h3><p>The School of Engineering and Applied Science can trace its roots back to the School of Science, founded in 1872 by John Green. The first civil engineering chair was endowed by 1875 and its occupant, Charles MacMillan, founded the civil engineering department soon after. Cyrus Brackett, a physics professor, taught the first graduate course in engineering when he founded and lectured in the School of Electrical Engineering in 1889. <p>By 1912, there were enough civil and electrical engineers to form the Princeton Engineering Association, which promoted increased interest in engineering at Princeton. The University responded by forming the School of Engineering in 1921 under Dean Artuher Greene; four-year undergraduate programs were soon offered in civil, chemical, electrical, and mechanical and mining engineering. </p><p>In 1962, the School of Engineering and Applied Science, as it had come to be known, moved to the Engineering Quadrangle, which currently houses four of its six departments: Chemical and Biological Engineering, Civil and Environmental Engineering, Electrical Engineering, and Mechanical and Aerospace Engineering. Operations Research and Financial Engineering is across Olden Street in Sherrerd Hall. Computer Science occupies the building across Olden Street.</p><p>The School of Engineering and Applied Science is composed of six academic departments, one interdepartmental institute and a range of centers and programs that bring together people with a wide variety of expertise and interests.</p><p><a target='_blank' href='http://www.princeton.edu/engineering/'>princeton.edu/engineering</a></p>")
 
   var deptCEE = new google.maps.LatLng(40.3499211, -74.6511662);
   var marker = createMarker(deptCEE,"Civil & Environmental Engineering","<h3>Civil & Environmental Engineering</h3><p>Civil and Environmental Engineering has several different tracks: Structural Engineering; Environmental Engineering; Geological Engineering; Architecture and Engineering; and Engineering and the Liberal Arts. A new semester-long program in Kenya has been developed for CEE majors at the <a target='_blank' href='http://www.mpala.org/'>Mpala Research Center</a> focusing on ecohydrology and biodiversity</p><p><a target='_blank' href='http://www.princeton.edu/cee/'>princeton.edu/cee</a></p>")  
@@ -91,10 +97,10 @@ function initialize() {
   var marker = createMarker(instPRISM,"The Princeton Institute for the Science and Technology of Materials (PRISM)","<h3>The Princeton Institute for the Science and Technology of Materials (PRISM)</h3><p>PRISM at Princeton University was founded to address long term global and societal challenges through deeper understanding and invention in the world of materials and their applications. The core elements of our mission include research integrating the sciences and engineering to pursue new fields at the intersection of traditional disciplines, a seamless boundary between academia and industry, and the education of the next generation of leaders in the field.</p><p><a target='_blank' href='http://www.princeton.edu/prism/'>princeton.edu/prism</a></p>")
 
   var labHoyt = new google.maps.LatLng(40.34964718, -74.65463161);
-  var marker = createMarker(labHoyt,"Hoyt Laboratory","<h3>Hoyt Laboratory</h3><p>ews.me totally blowing up on Twitter +1 5 praise erasers & how to avoid them digital first Ushahidi newsonomics Marshall McLuhan Dan Fleckner Gardening & War section tools go viral, if the news is that important, it'll find me we will make them pay hashtag a giant stack of newspapers that you'll never read Mozilla fourth estate semipermeable inverted pyramid Josh Marshall discuss. commons-based peer production horse-race coverage TechCrunch Quora totally blowing up on Twitter kitchen table of the future perfect for starting a campfire Pulse TweetDeck, Patch Ushahidi people formerly known as the audience engagement rubber cement WaPo Article Skimmer, election-night hologram cancel my subscription nonprofit Arianna Gutenberg parenthesis DocumentCloud Free Darko.</p><p><a target='_blank' href='/'>Reserved for link</a></p>") 
+  var marker = createMarker(labHoyt,"Hoyt Laboratory","<h3>Hoyt Laboratory</h3><p>ews.me totally blowing up on Twitter +1 5 praise erasers & how to avoid them digital first Ushahidi newsonomics Marshall McLuhan Dan Fleckner Gardening & War section tools go viral, if the news is that important, it'll find me we will make them pay hashtag a giant stack of newspapers that you'll never read Mozilla fourth estate semipermeable inverted pyramid Josh Marshall discuss. commons-based peer production horse-race coverage TechCrunch Quora totally blowing up on Twitter kitchen table of the future perfect for starting a campfire Pulse TweetDeck, Patch Ushahidi people formerly known as the audience engagement rubber cement WaPo Article Skimmer, election-night hologram cancel my subscription nonprofit Arianna Gutenberg parenthesis DocumentCloud Free Darko.</p><p><a target='_blank' href='http://princeton.edu/engineering'>Reserved for link</a></p>") 
 
   var ctrFriend = new google.maps.LatLng(40.35031357, -74.65274334);
-  var marker = createMarker(ctrFriend,"Friend Center for Engineering Education","<h3>Friend Center for Engineering Education</h3><p>The 70,000-square-foot Friend Center for Engineering Education was dedicated in 2001. It was designed by Henry N. Cobb of the renowed architectural firm Pei Cobb Freed & Partners and was established through a gift from Dennis J. Keller '63, chair and chief executive officer of DeVry Inc., in memory of Peter W. Friend '63. It is the principal classroom, library, and general computing facility of the School of Engineering and Applied Science, and many liberal arts classes also are held here. Downstairs are computer labs and classrooms, while on the ground floor is the Engineering Library.</p><p><a target='_blank' href='http://www.princeton.edu/prism/'>princeton.edu/prism</a></p>") 
+  var marker = createMarker(ctrFriend,"Friend Center for Engineering Education","<h3>Friend Center for Engineering Education</h3><p>The 70,000-square-foot Friend Center for Engineering Education was dedicated in 2001. It was designed by Henry N. Cobb of the renowed architectural firm Pei Cobb Freed & Partners and was established through a gift from Dennis J. Keller '63, chair and chief executive officer of DeVry Inc., in memory of Peter W. Friend '63. It is the principal classroom, library, and general computing facility of the School of Engineering and Applied Science, and many liberal arts classes also are held here. Downstairs are computer labs and classrooms, while on the ground floor is the Engineering Library.</p><p><a target='_blank' href='http://princeton.edu/engineering'>Reserved for link</a></p>") 
 
   // put the assembled side_bar_html contents into the side_bar div
   document.getElementById("ul_side_bar").innerHTML = side_bar_html;
@@ -102,7 +108,7 @@ function initialize() {
  
 var infowindow = new google.maps.InfoWindow(
   { 
-    size: new google.maps.Size(150,50)
+    size: new google.maps.Size(125,50)
   });
     
 // This function picks up the click and opens the corresponding info window
@@ -120,6 +126,8 @@ function createMarker(latlng, name, html) {
         });
 
     google.maps.event.addListener(marker, 'click', function() {
+        map.setCenter(marker.getPosition());
+        //map.panTo(marker.getPosition());
         infowindow.setContent(contentString); 
         infowindow.open(map,marker);
         });
