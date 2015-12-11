@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <head>
 <html lang="en">
@@ -58,13 +59,55 @@ function initialize() {
         infowindow.close();
         });
 
+/*Device targets*/
 
+//Target iPad Landscape
+var iPadLandscape = window.matchMedia( "(max-width: 1024px) and (max-height: 768px)" );
+  if (iPadLandscape.matches) {
+    map.setZoom(18);
+    map.setCenter(40.35058748, -74.65199232);
+  }
+
+//Target iPad Portrait
+var iPadPortrait = window.matchMedia( "(max-width: 768px) and (max-height: 1024px)" );
+  if (iPadPortrait.matches) {
+    map.setZoom(17);
+    map.setCenter(new google.maps.LatLng(40.35029313, -74.65191722));
+  }
+
+//Target iPhone4
+var iPhone4 = window.matchMedia( "(max-width: 320px) and (max-height:480px)" );
+  if (iPhone4.matches) {
+    map.setZoom(17);
+    map.setCenter(new google.maps.LatLng(40.3502318, -74.65159535));
+  }
+
+//Target iPhone5
+var iPhone5 = window.matchMedia( "(max-width: 320px) and (max-height:568px)" );
+  if (iPhone5.matches) {
+    map.setZoom(17);
+    map.setCenter(new google.maps.LatLng(40.3502318, -74.65159535));
+  }
+
+//Target iPhone6
+var iPhone6 = window.matchMedia( "(max-width: 375px) and (max-height:627px)" );
+  if (iPhone6.matches) {
+    map.setZoom(17);
+    map.setCenter(new google.maps.LatLng(40.35010507, -74.65158463));
+  }
+
+//Target iPhone6 Plus
+var iPhone6Plus = window.matchMedia( "(max-width: 414px) and (max-height:736px)" );
+  if (iPhone6Plus.matches) {
+    map.setZoom(17);
+    map.setCenter(new google.maps.LatLng(40.35004375, -74.65162218));
+  }
 
   // Add markers to the map
   // Set up Engineering markers with info windows 
   // add the points    
   var schoolEng = new google.maps.LatLng(40.3505098, -74.65147734);
-  var marker = createMarker(schoolEng,"School of Engineering & Applied Science","<h3>School of Engineering & Applied Science</h3><p>The School of Engineering and Applied Science can trace its roots back to the School of Science, founded in 1872 by John Green. The first civil engineering chair was endowed by 1875 and its occupant, Charles MacMillan, founded the civil engineering department soon after. Cyrus Brackett, a physics professor, taught the first graduate course in engineering when he founded and lectured in the School of Electrical Engineering in 1889. <p>By 1912, there were enough civil and electrical engineers to form the Princeton Engineering Association, which promoted increased interest in engineering at Princeton. The University responded by forming the School of Engineering in 1921 under Dean Artuher Greene; four-year undergraduate programs were soon offered in civil, chemical, electrical, and mechanical and mining engineering. </p><p>In 1962, the School of Engineering and Applied Science, as it had come to be known, moved to the Engineering Quadrangle, which currently houses four of its six departments: Chemical and Biological Engineering, Civil and Environmental Engineering, Electrical Engineering, and Mechanical and Aerospace Engineering. Operations Research and Financial Engineering is across Olden Street in Sherrerd Hall. Computer Science occupies the building across Olden Street.</p><p>The School of Engineering and Applied Science is composed of six academic departments, one interdepartmental institute and a range of centers and programs that bring together people with a wide variety of expertise and interests.</p><p><a target='_blank' href='http://www.princeton.edu/engineering/'>princeton.edu/engineering</a></p>")
+  var marker = createMarker(schoolEng,"School of Engineering & Applied Science","<h3>School of Engineering & Applied Science</h3><p>ews.me totally up on Twitter +1 5 praise erasers & how to avoid them digital first Ushahidi newsonomics Marshall McLuhan Dan Fleckner Gardening & War section tools go viral, if the news is that important, it'll find me we will make them pay hashtag a giant stack of newspapers that you'll never read Mozilla fourth estate semipermeable inverted pyramid Josh Marshall discuss. commons-based peer production horse-race coverage TechCrunch Quora totally blowing up on Twitter kitchen table of the future perfect for starting a campfire Pulse TweetDeck, Patch Ushahidi people formerly known as the audience engagement rubber cement WaPo Article Skimmer, election-night hologram cancel my subscription nonprofit Arianna Gutenberg parenthesis DocumentCloud Free Darko.</p><p><a target='_blank' href='http://www.princeton.edu/engineering/'>princeton.edu/engineering</a></p>")
 
   var deptCEE = new google.maps.LatLng(40.3499211, -74.6511662);
   var marker = createMarker(deptCEE,"Civil & Environmental Engineering","<h3>Civil & Environmental Engineering</h3><p>Civil and Environmental Engineering has several different tracks: Structural Engineering; Environmental Engineering; Geological Engineering; Architecture and Engineering; and Engineering and the Liberal Arts. A new semester-long program in Kenya has been developed for CEE majors at the <a target='_blank' href='http://www.mpala.org/'>Mpala Research Center</a> focusing on ecohydrology and biodiversity</p><p><a target='_blank' href='http://www.princeton.edu/cee/'>princeton.edu/cee</a></p>")  
@@ -97,7 +140,7 @@ function initialize() {
   var marker = createMarker(instPRISM,"The Princeton Institute for the Science and Technology of Materials (PRISM)","<h3>The Princeton Institute for the Science and Technology of Materials (PRISM)</h3><p>PRISM at Princeton University was founded to address long term global and societal challenges through deeper understanding and invention in the world of materials and their applications. The core elements of our mission include research integrating the sciences and engineering to pursue new fields at the intersection of traditional disciplines, a seamless boundary between academia and industry, and the education of the next generation of leaders in the field.</p><p><a target='_blank' href='http://www.princeton.edu/prism/'>princeton.edu/prism</a></p>")
 
   var labHoyt = new google.maps.LatLng(40.34964718, -74.65463161);
-  var marker = createMarker(labHoyt,"Hoyt Laboratory","<h3>Hoyt Laboratory</h3><p>ews.me totally blowing up on Twitter +1 5 praise erasers & how to avoid them digital first Ushahidi newsonomics Marshall McLuhan Dan Fleckner Gardening & War section tools go viral, if the news is that important, it'll find me we will make them pay hashtag a giant stack of newspapers that you'll never read Mozilla fourth estate semipermeable inverted pyramid Josh Marshall discuss. commons-based peer production horse-race coverage TechCrunch Quora totally blowing up on Twitter kitchen table of the future perfect for starting a campfire Pulse TweetDeck, Patch Ushahidi people formerly known as the audience engagement rubber cement WaPo Article Skimmer, election-night hologram cancel my subscription nonprofit Arianna Gutenberg parenthesis DocumentCloud Free Darko.</p><p><a target='_blank' href='http://princeton.edu/engineering'>Reserved for link</a></p>") 
+  var marker = createMarker(labHoyt,"Hoyt Laboratory","<h3>Hoyt Laboratory</h3><p>ews.me totally up on Twitter +1 5 praise erasers & how to avoid them digital first Ushahidi newsonomics Marshall McLuhan Dan Fleckner Gardening & War section tools go viral, if the news is that important, it'll find me we will make them pay hashtag a giant stack of newspapers that you'll never read Mozilla fourth estate semipermeable inverted pyramid Josh Marshall discuss. commons-based peer production horse-race coverage TechCrunch Quora totally blowing up on Twitter kitchen table of the future perfect for starting a campfire Pulse TweetDeck, Patch Ushahidi people formerly known as the audience engagement rubber cement WaPo Article Skimmer, election-night hologram cancel my subscription nonprofit Arianna Gutenberg parenthesis DocumentCloud Free Darko.</p><p><a target='_blank' href='http://princeton.edu/engineering'>Reserved for link</a></p>") 
 
   var ctrFriend = new google.maps.LatLng(40.35031357, -74.65274334);
   var marker = createMarker(ctrFriend,"Friend Center","<h3>Friend Center</h3><p>The 70,000-square-foot Friend Center for Engineering Education was dedicated in 2001. It was designed by Henry N. Cobb of the renowed architectural firm Pei Cobb Freed & Partners and was established through a gift from Dennis J. Keller '63, chair and chief executive officer of DeVry Inc., in memory of Peter W. Friend '63. It is the principal classroom, library, and general computing facility of the School of Engineering and Applied Science, and many liberal arts classes also are held here. Downstairs are computer labs and classrooms, while on the ground floor is the Engineering Library.</p><p><a target='_blank' href='http://princeton.edu/engineering'>Reserved for link</a></p>") 
@@ -115,7 +158,7 @@ var infowindow = new google.maps.InfoWindow(
 function myclick(i) {
   google.maps.event.trigger(gmarkers[i], "click");
 }
-
+var bounds = new GLatLngBounds();
 // A function to create the marker and set up the event window function 
 function createMarker(latlng, name, html) {
     var contentString = html;
@@ -136,7 +179,7 @@ function createMarker(latlng, name, html) {
     // add a line to the side_bar html
     side_bar_html += '<li><a href="javascript:myclick(' + (gmarkers.length-1) + ')">' + name + '<\/a><\/li><hr><br>';
 }
- 
+
 
     // This Javascript is based on code provided by
     // http://www.bisphamchurch.org.uk/   
@@ -185,7 +228,7 @@ img {
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #000;
+    background: #fff;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -235,6 +278,7 @@ hr {
     position: absolute;
     top: 0;
     width: 300px;
+    height:100%;
     margin: 145px 0 0 0;
     padding: 0;
     list-style: none;
@@ -350,8 +394,7 @@ hr {
                 <img src="img/Princeton-Engineering-4-Line.svg" class="img-responsive"><hr>
               </div><!-- sidebar-brand -->
           <ul class="sidebar-nav" id="ul_side_bar"></ul>
-       
-      </div> <!-- sidebar wrapper -->
+       </div> <!-- sidebar wrapper -->
 
 
       <!-- Page Content -->
