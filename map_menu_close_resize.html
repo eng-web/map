@@ -14,7 +14,7 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBxJ6SdyoXA8V_tYwnEnqC2N63sZOD_TZM&sensor=false&callback=initMap'></script> 
+<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBxJ6SdyoXA8V_tYwnEnqC2N63sZOD_TZM&sensor=false&callback=initMap'></script>
     <!-- Custom CSS 
     <link href="css/simple-sidebar.css" rel="stylesheet">-->
 
@@ -24,13 +24,14 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link href="css/mapstyles.css" rel="stylesheet">
 <script>
-// this variable will collect the html which will eventually be placed in the side_bar 
-      var side_bar_html = ""; 
-    
-      // arrays to hold copies of the markers and html used by the side_bar 
-      // because the function closure trick doesnt work there 
-      var gmarkers = []; 
+// this variable will collect the html which will eventually be placed in the side_bar
+      var side_bar_html = "";
+
+      // arrays to hold copies of the markers and html used by the side_bar
+      // because the function closure trick doesnt work there
+      var gmarkers = [];
       var map = null;
 
 function initialize() {
@@ -214,8 +215,8 @@ var iPhone6Plus = window.matchMedia( "(max-width: 414px) and (max-height:736px)"
   }
 
   // Add markers to the map
-  // Set up Engineering markers with info windows 
-  // add the points    
+  // Set up Engineering markers with info windows
+  // add the points
   var schoolEng = new google.maps.LatLng(40.3505098, -74.65147734);
   var marker = createMarker(schoolEng,"School of Engineering & Applied Science","<h3>School of Engineering & Applied Science</h3><p>Like the overall University, the engineering school is unique in combining the strengths of a world-leading research institution with the qualities of an outstanding liberal arts college. In both its teaching and research, Princeton engineering pursues fundamental knowledge as well as multidisciplinary collaborations that make technology effective in solving societal problems. The school is committed to preparing all students — engineers as well as students from across the University — to become leaders in a technology-driven society.</p><p><a target=\'_blank\' href=\'http://www.princeton.edu/engineering/\'>princeton.edu/engineering</a></p>")
 
@@ -227,7 +228,7 @@ var iPhone6Plus = window.matchMedia( "(max-width: 414px) and (max-height:736px)"
 
   var deptCS = new google.maps.LatLng(40.35020727, -74.65222836);
   var marker = createMarker(deptCS,"Computer Science","<h3>Computer Science</h3><p>Princeton has been at the forefront of computing since Alan Turing, Alonzo Church and John von Neumann were among its residents. The department has experienced significant growth over the last few years with strong groups in theory, systems, networking, computer architecture, graphics/media,programming languages, computational science, security, artificial intelligence, and computational biology.</p><p><a target=\'_blank\' href=\'http://www.cs.princeton.edu/\'>cs.princeton.edu</a></p>")
- 
+
   var deptEE = new google.maps.LatLng(40.35088592, -74.65111256);
   var marker = createMarker(deptEE,"Electrical Engineering","<h3>Electrical Engineering</h3><p>Princeton\'s electrical engineering program, started in 1889 as one of the first in the United States, remains at the forefront of the field, with research aimed at improving human health, communications, environmental protection, energy production and life in developing regions. Specific areas of research include the basic physics of semiconductors; electronic and optical devices; the design of computers; and algorithms and structures for information and biological technologies.</p><p><a target=\'_blank\' href=\'http://ee.princeton.edu//\'>ee.princeton.edu</a></p>")
 
@@ -250,26 +251,27 @@ var iPhone6Plus = window.matchMedia( "(max-width: 414px) and (max-height:736px)"
   var marker = createMarker(instPRISM,"The Princeton Institute for the Science and Technology of Materials (PRISM)","<h3>The Princeton Institute for the Science and Technology of Materials (PRISM)</h3><p>The Princeton Institute for the Science and Technology of Materials (PRISM) is an interdisciplinary research center at Princeton University. The key element of PRISM is the integration of the sciences and engineering, with work spanning from fundamental theory through applications. PRISM offers a formal undergraduate program leading to a Certificate in Materials, in which students take a combination of core courses within PRISM accompanied by electives offered by departments, and participate in research with PRISM faculty. At the graduate level PRISM offers a multidisciplinary program in cooperation with academic departments. PRISM also conducts extensive educational outreach programs on several levels. </p><p><a target=\'_blank\' href=\'http://www.princeton.edu/prism/\'>princeton.edu/prism</a></p>")
 
   var labHoyt = new google.maps.LatLng(40.34964718, -74.65463161);
-  var marker = createMarker(labHoyt,"Hoyt Laboratory","<h3>Hoyt Laboratory</h3><p>ews.me totally up on Twitter +1 5 praise erasers & how to avoid them digital first Ushahidi newsonomics Marshall McLuhan Dan Fleckner Gardening & War section tools go viral, if the news is that important, it'll find me we will make them pay hashtag a giant stack of newspapers that you'll never read Mozilla fourth estate semipermeable inverted pyramid Josh Marshall discuss. commons-based peer production horse-race coverage TechCrunch Quora totally blowing up on Twitter kitchen table of the future perfect for starting a campfire Pulse TweetDeck, Patch Ushahidi people formerly known as the audience engagement rubber cement WaPo Article Skimmer, election-night hologram cancel my subscription nonprofit Arianna Gutenberg parenthesis DocumentCloud Free Darko.</p><p><a target='_blank' href='http://princeton.edu/engineering'>Reserved for link</a></p>") 
+  var marker = createMarker(labHoyt,"Hoyt Laboratory","<h3>Hoyt Laboratory</h3><p>ews.me totally up on Twitter +1 5 praise erasers & how to avoid them digital first Ushahidi newsonomics Marshall McLuhan Dan Fleckner Gardening & War section tools go viral, if the news is that important, it'll find me we will make them pay hashtag a giant stack of newspapers that you'll never read Mozilla fourth estate semipermeable inverted pyramid Josh Marshall discuss. commons-based peer production horse-race coverage TechCrunch Quora totally blowing up on Twitter kitchen table of the future perfect for starting a campfire Pulse TweetDeck, Patch Ushahidi people formerly known as the audience engagement rubber cement WaPo Article Skimmer, election-night hologram cancel my subscription nonprofit Arianna Gutenberg parenthesis DocumentCloud Free Darko.</p><p><a target='_blank' href='http://princeton.edu/engineering'>Reserved for link</a></p>")
 
   var ctrFriend = new google.maps.LatLng(40.35031357, -74.65274334);
-  var marker = createMarker(ctrFriend,"Friend Center","<h3>Friend Center</h3><p>The 70,000-square-foot Friend Center for Engineering Education was dedicated in 2001. It was designed by Henry N. Cobb of the renowed architectural firm Pei Cobb Freed & Partners and was established through a gift from Dennis J. Keller '63, chair and chief executive officer of DeVry Inc., in memory of Peter W. Friend '63. It is the principal classroom, library, and general computing facility of the School of Engineering and Applied Science, and many liberal arts classes also are held here. Downstairs are computer labs and classrooms, while on the ground floor is the Engineering Library.</p><p><a target='_blank' href='http://princeton.edu/engineering'>Reserved for link</a></p>") 
+  var marker = createMarker(ctrFriend,"Friend Center","<h3>Friend Center</h3><p>The 70,000-square-foot Friend Center for Engineering Education was dedicated in 2001. It was designed by Henry N. Cobb of the renowed architectural firm Pei Cobb Freed & Partners and was established through a gift from Dennis J. Keller '63, chair and chief executive officer of DeVry Inc., in memory of Peter W. Friend '63. It is the principal classroom, library, and general computing facility of the School of Engineering and Applied Science, and many liberal arts classes also are held here. Downstairs are computer labs and classrooms, while on the ground floor is the Engineering Library.</p><p><a target='_blank' href='http://princeton.edu/engineering'>Reserved for link</a></p>")
 
   // put the assembled side_bar_html contents into the side_bar div
   document.getElementById("ul_side_bar").innerHTML = side_bar_html;
 }
- 
+
 var infowindow = new google.maps.InfoWindow(
-  { 
-    size: new google.maps.Size(125,50)
+  {
+      //size: new google.maps.Size(125,50)
+      maxWidth:300
   });
-    
+
 // This function picks up the click and opens the corresponding info window
 function myclick(i) {
   google.maps.event.trigger(gmarkers[i], "click");
 }
 
-// A function to create the marker and set up the event window function 
+// A function to create the marker and set up the event window function
 function createMarker(latlng, name, html) {
     var contentString = html;
     var marker = new google.maps.Marker({
@@ -281,7 +283,7 @@ function createMarker(latlng, name, html) {
     google.maps.event.addListener(marker, 'click', function() {
         //map.setCenter(marker.getPosition());
         //map.panTo(marker.getPosition());
-        infowindow.setContent(contentString); 
+        infowindow.setContent(contentString);
         infowindow.open(map,marker);
         });
     // save the info we need to use later for the side_bar
@@ -292,18 +294,18 @@ function createMarker(latlng, name, html) {
 
 
     // This Javascript is based on code provided by
-    // http://www.bisphamchurch.org.uk/   
+    // http://www.bisphamchurch.org.uk/
     // http://econym.org.uk/gmap/
     // from the v2 tutorial page at:
-    // http://econym.org.uk/gmap/basic2.htm 
+    // http://econym.org.uk/gmap/basic2.htm
 //
-</script> 
-<style>
+</script>
+<!--<style>
 html, body {
   margin:0px; padding:0px; height: 100%;
 }
 #map_canvas {
-  width: 100%; height:100vh;
+  width: 100%; height:90vh;
 }
 .gm-style-iw {
   width: 375px !important;
@@ -312,6 +314,11 @@ html, body {
 img {
   padding: 5px 25px;
   margin-top:2.5px;
+}
+
+.navbar-default {
+    background-color: #060606;
+    border-color: #e7e7e7;
 }
 /*!
  * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
@@ -338,9 +345,9 @@ img {
     position: fixed;
     left: 250px;
     width: 0;
-    height: 100%;
+    height: 90vh;
     margin-left: -250px;
-    overflow-y: auto;
+    overflow-y: scroll;
     background: #fff;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -355,28 +362,12 @@ img {
 #page-content-wrapper {
     width: 100%;
     position: absolute;
-    padding: 0px 15px;
+    padding: 0px 10px;
 }
 
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
     margin-right: -250px;
-}
-#sidebar-bottom-wrapper {
-    bottom:0;
-    z-index:1000;
-    position: fixed;
-    left: 250px;
-    width: 22%;
-    height: 5%;
-    margin-left: -250px;
-    overflow-y: auto;
-    background: #fff;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    clear:both;
 }
 /* Sidebar Styles */
 hr {
@@ -391,17 +382,19 @@ hr {
     position: absolute;
     top: 0;
     width: 300px;
-    height:100%;
-    margin: 145px 0 0 0;
+    height:auto;
+    margin: 0 0 0 0;
     padding: 0;
     list-style: none;
     background-color:#fff;
+    z-index: -1;
+    font-size: 1em;
 }
 
 .sidebar-nav li:first-child {
     text-indent: 20px;
     line-height: 20px;
-    padding-top: 15px;
+    padding-top: 0px;
 }
 .sidebar-nav li:not(:first-child) {
     text-indent: 20px;
@@ -426,16 +419,7 @@ hr {
 .sidebar-nav li a:focus {
     text-decoration: none;
 }
-.sidebar-nav-bottom {
-    position: absolute;
-    bottom: 0;
-    width: 300px;
-    margin: 0 0 -200px 0;
-    padding: 0;
-    list-style: none;
-    background-color:#fff;
-    height:100px;
-}
+
 .sidebar-brand {
     position: absolute;
     top: 0;
@@ -446,12 +430,13 @@ hr {
     list-style: none;
     background-color:#fff;
 }
-.sidebar-brand-bottom {
-    position: relative;
-    width: 300px;
-    bottom: 0;
-    left: 0;
-    z-index: 5;
+#footer {
+    padding: 0px 0px 0px 0;
+    height: 40px;
+}
+#footer .img {
+    padding: 0 0 0 0;
+    height: 40px;
 }
 /*
 .sidebar-nav > .sidebar-brand {
@@ -497,38 +482,45 @@ hr {
         margin-right: 0;
     }
 }
-</style>
+</style>-->
+
   </head> 
-<body onload="initialize()"> 
-
-    <div id="wrapper">
-      <div id="sidebar-wrapper">
-              <div class="sidebar-brand">
-                <img src="img/Princeton-Engineering-4-Line.svg" class="img-responsive"><hr>
-              </div><!-- sidebar-brand -->
-          <ul class="sidebar-nav" id="ul_side_bar"></ul>
-       </div> <!-- sidebar wrapper -->
-
+<body onload="initialize()">
 
       <!-- Page Content -->
         <div id="page-content-wrapper">
+            <nav class="navbar navbar-default navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header"></div>
+                </div>
+            </nav>
+            <div id="wrapper">
+                <div id="sidebar-wrapper">
+                   <!-- <div class="sidebar-brand">
+                        <img src="img/engineering_logo.png" class="img-responsive"><hr>
+                    </div><!-- sidebar-brand -->
+                    <ul class="sidebar-nav" id="ul_side_bar"></ul>
+                </div> <!-- sidebar wrapper -->
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12" id="map_canvas">
                     </div>
                 </div>
             </div>
+                <div id="footer">
+                    <img src="img/signature.png" class="img img-responsive">
+                </div>
         </div>
         <!-- /#page-content-wrapper -->
 
     </div>
     <!-- /#wrapper -->
- 
+
     <noscript><p><b>JavaScript must be enabled in order for you to use Google Maps.</b> 
       However, it seems JavaScript is either disabled or not supported by your browser. 
       To view Google Maps, enable JavaScript by changing your browser options, and then 
       try again.</p>
-    </noscript> 
+    </noscript>
 
-  </body> 
+  </body>
 </html> 
