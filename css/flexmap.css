@@ -26,8 +26,13 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
-body {
+html,body {
     line-height: 1;
+    margin:0;
+    padding:0;
+    font: 24px Helvetica;
+    background: #000000;
+    height:100%
 }
 ol, ul, li {
     list-style: none;
@@ -57,7 +62,7 @@ p {
     -webkit-margin-end: 0px;
 }
 #map_canvas {
-    display: block; width: 100%; height:100vh;
+    display: block; width: 100%; min-height:700px;
 }
 #map_canvas > p {
     font-size:15px;
@@ -67,13 +72,8 @@ p {
     height:auto !important;
 }
 
-body {
-    font: 24px Helvetica;
-    background: #000000;
-}
-
 #main {
-    min-height: 200px;
+
     margin: 0px;
     padding: 0px;
     display: -webkit-flex;
@@ -92,6 +92,7 @@ body {
     flex: 3 1 60%;
     -webkit-order: 2;
     order: 2;
+
 }
 
 #main > nav {
@@ -106,13 +107,15 @@ body {
     order: 1;
     text-align:center;
 
+
+
 }
 
 #main > nav > #ul_side_bar {
     list-style: none;
     text-align: center;
-    height:80vh;
-    overflow-y:scroll;
+    height:600px;
+    overflow-y:auto;
     line-height:80%
 }
 
@@ -138,7 +141,7 @@ body {
     order: 3;
 }
 
-header, footer {
+header {
     display: block;
     margin: 4px;
     padding: 5px;
@@ -147,29 +150,19 @@ header, footer {
     border-radius: 7pt;
     background: #000000;
 }
-
-/* Too narrow to support three columns */
-@media all and (max-width: 640px) {
-
-    #main, #page {
-        -webkit-flex-flow: column;
-        flex-direction: column;
-    }
-
-    #main > article, #main > nav, #main > aside {
-        /* Return them to document order */
-        -webkit-order: 0;
-        order: 0;
-    }
-
-    #main > nav, #main > aside, header, footer {
-        min-height: 50px;
-        max-height: 50px;
-    }
+footer {
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    margin: 4px;
+    height: 100px;
+    width:100%;
+    background: #6dad64;
 }
 
 .grid {
     border: solid 1px #e7e7e7;
+    max-height:99vh;
 }
 
 .grid__row {
@@ -192,7 +185,7 @@ header, footer {
     height:inherit;
 }
 
-.grid__item--header .img {
+.grid__item--header-img {
     width:500px;
 }
 
@@ -222,8 +215,8 @@ hr {
     margin: 1em 0;
     padding: 0;
 }
-
-@media all and ( max-width: 200px ) {
+/*
+@media all and ( max-width: 300px ) {
 
     .grid__row--xs-sm {
         flex-direction: row;
@@ -263,8 +256,31 @@ hr {
         display: none;
     }
 
+}*/
 
+/*Too narrow to support three columns*/
+@media all and (max-width: 640px) {
+
+    #main, #page {
+        -webkit-flex-flow: column;
+        flex-direction: column;
+    }
+
+    #main > article, #main > aside {
+        /* Return them to document order*/
+        -webkit-order: 0;
+        order: 0;
+    }
+    #main > nav {
+        display: none;
+    }
+
+    #main > aside, header, footer {
+        min-height: 50px;
+        max-height: 50px;
+    }
 }
+
 
 
 @media all and ( min-width: 480px ) {
