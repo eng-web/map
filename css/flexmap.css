@@ -77,7 +77,6 @@ p {
     margin: 0px;
     padding: 0 0 0 0;
     display: -webkit-flex;
-    display: flex;
     -webkit-flex-flow: row;
     flex-flow: row;
 }
@@ -88,7 +87,7 @@ p {
     border: 1px solid #cccc33;
     border-radius: 7pt;
     background: #dddd88;
-    webkit-flex: 3 1 60%;
+    -webkit-flex: 3 1 60%;
     flex: 3 1 60%;
     display:flex;
     align-items:stretch;
@@ -154,9 +153,11 @@ header {
     background: #000000;
 }
 footer {
-    display:flex;
+    display:-webkit-flex;
+    -webkit-flex-direction: row;
     flex-direction:row;
     align-content:flex-start;
+    -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
     padding-top:10px;
     background-color:#000;
@@ -164,6 +165,7 @@ footer {
 
 .footer-item {
     order:0;
+    -webkit-flex: flex: 1 1 100%;
     flex: 1 1 100%;
     align-self:auto;
     border: 1px solid #fff;
@@ -172,24 +174,28 @@ footer {
 
 .grid {
     border: solid 1px #e7e7e7;
-    display: flex;
+    display: -webkit-flex;
     min-height:95vh;
+    -webkit-flex-direction: column;
     flex-direction:column;
 }
 
 .grid__row {
-    display: flex;
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
     flex-direction: column;
 }
 
 .grid__row--header {
-    display: flex;
+    display: -webkit-flex;
+    -webkit-flex-direction: colunn;
     flex-direction: column;
     background-color:#000;
 }
 
 
 .grid__item--header {
+    -webkit-flex: 1;
     flex: 1;
     border: solid 1px #e7e7e7;
     width:100%;
@@ -205,6 +211,7 @@ footer {
 }
 
 .grid__item {
+    -webkit-flex: 1;
     flex: 1;
     padding: 12px;
     border: solid 1px #e7e7e7;
@@ -276,6 +283,7 @@ hr {
 @media all and ( min-width: 480px ) {
 
     .grid__row--sm {
+        -webkit-flex-direction: row;
         flex-direction: row;
     }
 
@@ -363,9 +371,9 @@ hr {
         border: 1px solid #cccc33;
         border-radius: 7pt;
         background: #dddd88;
-        webkit-flex: 3 1 60%;
+        -webkit-flex: 3 1 60%;
         flex: 3 1 60%;
-        display: flex;
+        display: -webkit-flex;
         align-items: stretch;
         align-content: stretch;
         -webkit-order: 2;
@@ -405,6 +413,7 @@ hr {
     }*/
 
     .grid__row--md {
+        -webkit-flex-direction: row;
         flex-direction: row;
     }
     .grid__item--header .img {
@@ -436,6 +445,7 @@ hr {
 @media all and ( min-width: 960px ) {
 
     .grid__row--lg {
+        -webkit-flex-direction: row;
         flex-direction: row;
     }
 
