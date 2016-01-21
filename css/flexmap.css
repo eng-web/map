@@ -376,7 +376,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
     }
 }
 
-@media all and (min-width: 720px) and ( max-height: 950px ) {
+@media all and (min-width: 720px) and ( max-height: 1000px ) {
 
     #main > article {
         height: 60vh!important
@@ -426,7 +426,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
         align-content: stretch;
         -webkit-order: 2;
         order: 2;
-        height:70vh;
+        height:67vh;
     }
     #main > nav {
         margin: 4px;
@@ -439,7 +439,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
         -webkit-order: 1;
         order: 1;
         text-align: center;
-        height:70vh;
+        height:67vh;
     }
     #main > nav > #ul_side_bar {
         list-style: none;
@@ -449,11 +449,11 @@ and (-webkit-min-device-pixel-ratio: 2) {
         line-height: 80%;
     }
     #map_canvas {
-        height: 70vh;
+        height: 67vh;
     }
 }
 
-@media all and ( min-width: 720px ) and (min-height: 1089px) {
+@media all and ( min-width: 720px ) and (min-height: 1090px) {
 
     /*.grid {
         border: solid 1px #e7e7e7;
