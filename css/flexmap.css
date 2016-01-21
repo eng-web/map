@@ -11,7 +11,7 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
+figure, figcaption, footer, header, group,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
     margin: 0;
@@ -23,7 +23,7 @@ time, mark, audio, video {
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+footer, header, group, menu, nav, section {
     display: block;
 }
 html,body {
@@ -32,7 +32,7 @@ html,body {
     padding:0;
     font: 24px Helvetica;
     background: #818181;
-    height:90vh;
+    /*height:90vh;*/
 }
 ol, ul, li {
     list-style: none;
@@ -165,7 +165,7 @@ footer {
 
 .footer-item {
     order:0;
-    -webkit-flex: flex: 1 1 100%;
+    -webkit-flex: 1 1 100%;
     flex: 1 1 100%;
     align-self:auto;
     border: 1px solid #fff;
@@ -175,7 +175,7 @@ footer {
 .grid {
     border: solid 1px #e7e7e7;
     display: -webkit-flex;
-    min-height:95vh;
+    /*min-height:95vh;*/
     -webkit-flex-direction: column;
     flex-direction:column;
 }
@@ -188,7 +188,7 @@ footer {
 
 .grid__row--header {
     display: -webkit-flex;
-    -webkit-flex-direction: colunn;
+    -webkit-flex-direction: column;
     flex-direction: column;
     background-color:#000;
 }
@@ -278,6 +278,54 @@ hr {
     }
 
 }*/
+
+/* Queries */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: portrait)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+    #main > article {
+        margin: 4px;
+        padding: 5px;
+        border: 1px solid #cccc33;
+        border-radius: 7pt;
+        background: #dddd88;
+        -webkit-flex: 3 1 60%;
+        flex: 3 1 60%;
+        display: -webkit-flex;
+        align-items: stretch;
+        align-content: stretch;
+        -webkit-order: 2;
+        order: 2;
+        height:70vh;
+    }
+    #main > nav {
+        margin: 4px;
+        padding: 5px;
+        border: 1px solid #8888bb;
+        border-radius: 7pt;
+        background: #ffffff;
+        -webkit-flex: 1 6 20%;
+        flex: 1 6 20%;
+        -webkit-order: 1;
+        order: 1;
+        text-align: center;
+        height:70vh;
+    }
+    #main > nav > #ul_side_bar {
+        list-style: none;
+        text-align: center;
+        height: 58vh;
+        overflow-y: auto;
+        line-height: 80%;
+    }
+    #map_canvas {
+        height: 70vh;
+    }
+
+}
 
 
 @media all and ( min-width: 480px ) {
@@ -442,6 +490,7 @@ hr {
 
 }
 
+
 @media all and ( min-width: 960px ) {
 
     .grid__row--lg {
@@ -454,4 +503,3 @@ hr {
     }
 
 }
-
