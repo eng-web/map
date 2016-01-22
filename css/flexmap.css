@@ -399,12 +399,29 @@ and (max-device-width: 667px)
 and (-webkit-min-device-pixel-ratio: 2)
 and (orientation: portrait) {
 
+    #main, #page {
+        -webkit-flex-flow: column;
+        flex-direction: column;
+    }
+
+    #main > article, #main > aside {
+        /* Return them to document order*/
+        -webkit-order: 0;
+        order: 0;
+    }
+    #main > nav {
+        display: none;
+    }
+
+    #main > aside, header, footer {
+        min-height: 100px;
+        max-height: 50px;
+    }
+
     .grid__item--header-img {
         width: 100%;
     }
-    #main > article {
-        order: 0;
-    }
+
     p {
         display: block;
         -webkit-margin-before: 0.5em;
