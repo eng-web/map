@@ -408,6 +408,16 @@ and (orientation: portrait) {
         /* Return them to document order*/
         -webkit-order: 0;
         order: 0;
+        margin: 4px;
+        padding: 5px;
+        border: 1px solid #cccc33;
+        border-radius: 7pt;
+        background: #dddd88;
+        display: -webkit-flex;
+        align-items: stretch;
+        align-content: stretch;
+        height: 40vh;
+    }
     }
     #main > nav {
         display: none;
