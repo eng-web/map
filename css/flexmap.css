@@ -102,6 +102,7 @@ p {
 
 
 #main > nav {
+    display:flex;
     margin: 4px;
     padding: 5px;
     border: 1px solid #8888bb;
@@ -112,7 +113,7 @@ p {
     -webkit-order: 1;
     order: 1;
     text-align:center;
-
+    flex-direction:column;
 
 
 }
@@ -120,7 +121,7 @@ p {
 #main > nav > #ul_side_bar {
     list-style: none;
     text-align: center;
-    height:700px;
+    height:80vh;
     overflow-y:auto;
     line-height:80%
 }
@@ -282,200 +283,6 @@ hr {
 
 /* ----------- Queries ----------- */
 
-/* ---- Tablets ---- */
-
-/* iPad */
-@media only screen
-and (min-device-width: 768px)
-and (max-device-width: 1024px)
-and (orientation: portrait)
-and (-webkit-min-device-pixel-ratio: 2) {
-
-    #main > article {
-        margin: 4px;
-        padding: 5px;
-        border: 1px solid #cccc33;
-        border-radius: 7pt;
-        background: #dddd88;
-        -webkit-flex: 3 1 60%;
-        flex: 3 1 60%;
-        display: -webkit-flex;
-        align-items: stretch;
-        align-content: stretch;
-        -webkit-order: 2;
-        order: 2;
-        height:70vh;
-    }
-    #main > nav {
-        margin: 4px;
-        padding: 5px;
-        border: 1px solid #8888bb;
-        border-radius: 7pt;
-        background: #ffffff;
-        -webkit-flex: 1 6 20%;
-        flex: 1 6 20%;
-        -webkit-order: 1;
-        order: 1;
-        text-align: center;
-        height:70vh;
-    }
-    #main > nav > #ul_side_bar {
-        list-style: none;
-        text-align: center;
-        height: 58vh;
-        overflow-y: auto;
-        line-height: 80%;
-    }
-    #map_canvas {
-        height: 70vh;
-    }
-
-}
-
-/* ---- iPhones ---- */
-
-/* iPhone 4 and 4S Portrait */
-
-@media only screen
-and (min-device-width: 320px)
-and (max-device-width: 480px)
-and (-webkit-min-device-pixel-ratio: 2)
-and (orientation: portrait) {
-
-    #main > article {
-        margin: 4px;
-        padding: 5px;
-        border: 1px solid #cccc33;
-        border-radius: 7pt;
-        background: #dddd88;
-        -webkit-flex: 3 1 60%;
-        flex: 3 1 60%;
-        display: -webkit-flex;
-        align-items: stretch;
-        align-content: stretch;
-        -webkit-order: 2;
-        order: 2;
-        height:70vh;
-    }
-    #main > nav {
-        margin: 4px;
-        padding: 5px;
-        border: 1px solid #8888bb;
-        border-radius: 7pt;
-        background: #ffffff;
-        -webkit-flex: 1 6 20%;
-        flex: 1 6 20%;
-        -webkit-order: 1;
-        order: 1;
-        text-align: center;
-        height:70vh;
-    }
-    #main > nav > #ul_side_bar {
-        list-style: none;
-        text-align: center;
-        height: 58vh;
-        overflow-y: auto;
-        line-height: 80%;
-    }
-    #map_canvas {
-        height: 70vh;
-    }
-    .grid__item--header-img {
-        width: 100%;
-    }
-
-}
-
-/* ---- iPhone 6 ---- */
-
-/* Portrait and Landscape */
-@media only screen
-and (min-device-width: 375px)
-and (max-device-width: 667px)
-and (-webkit-min-device-pixel-ratio: 2) {
-
-}
-
-/* Portrait */
-@media only screen
-and (min-device-width: 375px)
-and (max-device-width: 667px)
-and (-webkit-min-device-pixel-ratio: 2)
-and (orientation: portrait) {
-
-    #main, #page {
-        -webkit-flex-flow: column;
-        flex-direction: column;
-    }
-
-    #main > nav {
-        display: none;
-    }
-
-    #main > aside, header {
-        min-height: 85px;
-        max-height: 50px;
-    }
-    .grid__item {
-        -webkit-flex: 1;
-        flex: 1;
-        padding: 5px;
-        border: solid 1px #e7e7e7;
-        background-color: #000;
-    }
-    .grid__item--header-img {
-        width: 100%;
-    }
-    #main > article {
-        margin: 4px;
-        padding: 5px;
-        border: 1px solid #cccc33;
-        border-radius: 7pt;
-        background: #dddd88;
-        -webkit-flex: 3 1 60%;
-        flex: 3 1 60%;
-        display: -webkit-flex;
-        align-items: stretch;
-        align-content: stretch;
-        -webkit-order: 2;
-        order: 2;
-
-    }
-    #main > article > #map_canvas {
-        margin: 4px;
-        padding: 5px;
-        border: 1px solid #20b6cc;
-        border-radius: 7pt;
-        -webkit-flex: 3 1 60%;
-        flex: 3 1 60%;
-        display: -webkit-flex;
-        align-items: stretch;
-        align-content: stretch;
-        -webkit-order: 2;
-        order: 2;
-
-    }
-
-    p {
-        display: block;
-        -webkit-margin-before: 0.5em;
-        -webkit-margin-after: 0.5em;
-        -webkit-margin-start: 0px;
-        -webkit-margin-end: 0px;
-        font-size: 14px
-    }
-
-}
-
-/* Landscape */
-@media only screen
-and (min-device-width: 375px)
-and (max-device-width: 667px)
-and (-webkit-min-device-pixel-ratio: 2)
-and (orientation: landscape) {
-
-}
-
 
 /* Desktop */
 @media all and ( min-width: 480px ) {
@@ -498,8 +305,20 @@ and (orientation: landscape) {
     #main > article, #main > aside {
         /* Return them to document order*/
         -webkit-order: 0;
+        margin: 4px;
+        padding: 5px;
+        border: 1px solid #cccc33;
+        border-radius: 7pt;
+        background: #dddd88;
+        -webkit-flex: 3 1 60%;
+        flex: 3 1 60%;
+        display: -webkit-flex;
+        align-items: stretch;
+        align-content: stretch;
         order: 0;
+        height: 67vh;
     }
+
     #main > nav {
         display: none;
     }
@@ -553,12 +372,12 @@ and (orientation: landscape) {
         height: 60vh
     }
 
-    #main > nav {
+    /*#main > nav {
         height: 60vh!important
-    }
+    }*/
 
     #main > nav > #ul_side_bar {
-        height: 40vh!important
+        height: 60vh!important
     }
 
     /*#map_canvas {
@@ -612,19 +431,14 @@ and (orientation: landscape) {
         text-align: center;
         height:67vh;
     }
-    #main > nav > #ul_side_bar {
+    /*#main > nav > #ul_side_bar {
         list-style: none;
         text-align: center;
         height: 58vh;
         overflow-y: auto;
         line-height: 80%;
-    }
-    /*#map_canvas {
-        height: 67vh;
-        -webkit-flex: 1;
-        flex:1;
-        border: 3px solid #007FFF;
     }*/
+
 }
 
 @media all and ( min-width: 720px ) and (min-height: 1090px) {
