@@ -421,6 +421,11 @@ and (orientation: portrait) {
     .grid__item--header-img {
         width: 100%;
     }
+    #map_canvas {
+        display: block;
+        width: 100%;
+        height: 70vh;
+    }
 
     p {
         display: block;
