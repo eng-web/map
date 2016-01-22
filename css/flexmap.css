@@ -292,6 +292,7 @@ hr {
 
     #main > article, #main > aside {
         /* Return them to document order*/
+        display: -webkit-flex !important;
         -webkit-order: 0 !important;
         margin: 4px !important;
         padding: 5px !important;
@@ -300,20 +301,19 @@ hr {
         background: #dddd88 !important;
         -webkit-flex: 3 1 60% !important;
         flex: 3 1 60% !important;
-        display: -webkit-flex !important;
         align-items: stretch !important;
         align-content: stretch !important;
         order: 0 !important;
         height: 400px !important;
     }
     #main > article > #map_canvas {
+        display: -webkit-flex;
         margin: 4px;
         padding: 5px;
         border: 1px solid #20b6cc;
         border-radius: 7pt;
         -webkit-flex: 3 1 60%;
         flex: 3 1 60%;
-        display: -webkit-flex;
         align-items: stretch;
         align-content: stretch;
         -webkit-order: 2;
