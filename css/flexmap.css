@@ -413,7 +413,7 @@ and (orientation: portrait) {
         display: none;
     }
 
-    #main > aside, header, footer {
+    #main > aside, header {
         min-height: 100px;
         max-height: 50px;
     }
@@ -424,7 +424,7 @@ and (orientation: portrait) {
     #map_canvas {
         display: block;
         width: 100%;
-        height: 70vh;
+        height: 40vh;
     }
 
     p {
@@ -475,9 +475,20 @@ and (orientation: landscape) {
         display: none;
     }
 
-    #main > aside, header, footer {
+    #main > aside, header {
         min-height: 100px;
         max-height: 50px;
+    }
+    .grid__item--header-img {
+        width: 100%;
+    }
+    p {
+        display: block;
+        -webkit-margin-before: 0.5em;
+        -webkit-margin-after: 0.5em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        font-size: 14px
     }
 }
 
