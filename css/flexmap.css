@@ -364,7 +364,7 @@ hr {
 
 
 /*Too narrow to support three columns*/
-@media all and (max-width: 640px) {
+/*@media all and (max-width: 640px) {
 
     #main, #page {
         -webkit-flex-flow: column;
@@ -372,7 +372,7 @@ hr {
     }
 
     #main > article, #main > aside {
-        /* Return them to document order*/
+        /* Return them to document order
         -webkit-order: 0;
         margin: 4px;
         padding: 5px;
@@ -417,7 +417,7 @@ hr {
         -webkit-margin-end: 0px;
         font-size: 14px
     }
-}
+}*/
 
 /*@media all and (min-width: 720px) and ( max-height: 845px ) {
 
