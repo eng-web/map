@@ -402,6 +402,17 @@ and (orientation: portrait) {
     .grid__item--header-img {
         width: 100%;
     }
+    #main > article {
+        order: 0;
+    }
+    p {
+        display: block;
+        -webkit-margin-before: 0.5em;
+        -webkit-margin-after: 0.5em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        font-size: 14px
+    }
 
 }
 
