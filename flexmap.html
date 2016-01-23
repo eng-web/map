@@ -31,7 +31,7 @@
                 maxZoom: 18,
                 center: new google.maps.LatLng(40.35014186, -74.65190649),
                 mapTypeControl: true,
-                streetViewControl: false,
+                streetViewControl: true,
                 mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
                 navigationControl: true,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -294,30 +294,30 @@
 <header>
     <div class="grid__row--header grid__row--lg grid__row--sm grid__row--xs">
     <div class="grid__item--header">
-        <img class="grid__item--header-img" src="img/engineering-two-line.png"/>
+        <a href="https://princeton.edu/engineering"><img class="grid__item--header-img" src="img/engineering-two-line.png"/></a>
     </div>
 </div>
     </header>
 <div class="grid__row grid__row--lg grid__row--sm grid__row--xs">
-    <div class="grid__item"><p><a href="https://www.princeton.edu/engineering/undergraduate/engineering-tours/sign-up/"><i class="fa fa-calendar-check-o"> Engineering Tour Sign Up</i></a></p>
+    <div class="grid__item"><p><i class="fa fa-calendar-check-o"></i><a href="https://www.princeton.edu/engineering/undergraduate/engineering-tours/sign-up/"> Engineering Tour Sign Up</a></p>
     </div>
     <div class="grid__item">
-        <p><a href="http://princeton.transloc.com/"><i class="fa fa-bus"> TigerTracker: Real-time bus routes</i></a></p>
+        <p><i class="fa fa-bus"></i><a href="http://princeton.transloc.com/"> TigerTracker: Real-time bus routes</a></p>
     </div>
     <div class="grid__item">
-        <p><a href="http://www.princeton.edu/main/visiting/aroundcampus/maps/princeton_map.pdf"><i class="fa fa-file-pdf-o"> Campus Map (.pdf)</i></a></p>
+        <p><i class="fa fa-file-pdf-o"></i><a href="http://www.princeton.edu/main/visiting/aroundcampus/maps/princeton_map.pdf"> Campus Map (.pdf)</a></p>
     </div>
 </div>
 
 <div id='main'>
     <article><div id="map_canvas"></div></article>
-    <nav><p>Nav</p>
+    <nav><h4>Departments and Centers</h4>
     <div id="ul_side_bar">
     </div>
     </nav>
 </div>
 <footer>
-    <div class="footer-item"><img class="grid__item--footer-img" src="img/pusig_white_os.png"></div>
+    <div class="footer-item"><a href="http://princeton.edu/"><img class="grid__item--footer-img" src="img/pusig_white_os.png"></a></div>
 </footer>
 
 </body>
