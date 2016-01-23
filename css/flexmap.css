@@ -333,7 +333,7 @@ hr {
         min-height: 25px;
     }
     .grid__item--header-img {
-        width: 100%;
+        width: 100%!important;
     }
     .grid__item {
         -webkit-flex: 1;
