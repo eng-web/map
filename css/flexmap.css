@@ -141,9 +141,9 @@ p {
     order: 1;
     text-align:center;
     flex-direction:column;
-    -webkit-box-shadow: inset 0px -8px 18px -5px rgba(87,85,87,1);
-    -moz-box-shadow: inset 0px -8px 18px -5px rgba(87,85,87,1);
-    box-shadow: inset 0px -8px 18px -5px rgba(87,85,87,1)
+    -webkit-box-shadow: inset 0px -8px 0px -5px rgba(255,255,255,1);
+    -moz-box-shadow: inset 0px -8px 0px -5px rgba(255,255,255,1);
+    box-shadow: inset 0px -8px 0px -5px rgba(255,255,255,1)
 }
 
 nav > h4 {
