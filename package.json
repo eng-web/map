@@ -1,0 +1,32 @@
+{
+  "name": "eng-map",
+  "version": "1.0.0",
+  "description": "engineering map",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/somenode/eng-map.git"
+  },
+  "author": "josh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/somenode/eng-map/issues"
+  },
+  "homepage": "https://github.com/somenode/eng-map#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.3.1",
+    "cssnext": "^1.8.4",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-postcss": "^6.0.1",
+    "gulp-rename": "^1.2.2"
+  },
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "lodash": "^4.0.0"
+  }
+}
