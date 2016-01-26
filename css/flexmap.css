@@ -374,8 +374,38 @@ footer {
     height:inherit;
 }
 
+/*----- Header -----*/
+header {
+    border-bottom: 1px solid #ececec;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; 
+    -webkit-box-orient: horizontal; 
+    -webkit-box-direction: normal; 
+    -webkit-flex-direction: row; 
+        -ms-flex-direction: row; 
+            flex-direction: row;
+}
+@media (max-width: 768px) {
+    header {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+}
+header > h1, header > ul {
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+}
+header > h1 {
+    border-right: 1px solid #ececec;
+}
 /*----- Site Logo -----*/
-.grid__item--header h1 a {
+h1.site-logo a {
     background: url('../img/engineering_logo.png') no-repeat 50% 50%;
     display: block;
     height: 60px;
@@ -384,16 +414,18 @@ footer {
     width: 300px;
 }
 @media (max-width: 768px) {
-    .grid__item--header h1 a {
+    h1.site-logo a {
         margin: auto;
     }
 }
 
 
 /*----- Button Navigation -----*/
-
 .main-navigation {
-    border-bottom: 1px solid #ececec;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     border-top: 1px solid #ececec;
     display: -webkit-box;
     display: -webkit-flex;

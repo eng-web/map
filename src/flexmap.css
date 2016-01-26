@@ -374,8 +374,25 @@ footer {
     height:inherit;
 }
 
+/*----- Header -----*/
+header {
+    border-bottom: 1px solid #ececec;
+    display: flex; 
+    flex-direction: row;
+}
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+}
+header > h1, header > ul {
+    flex-wrap: nowrap;
+}
+header > h1 {
+    border-right: 1px solid #ececec;
+}
 /*----- Site Logo -----*/
-.grid__item--header h1 a {
+h1.site-logo a {
     background: url('../img/engineering_logo.png') no-repeat 50% 50%;
     display: block;
     height: 60px;
@@ -384,16 +401,15 @@ footer {
     width: 300px;
 }
 @media (max-width: 768px) {
-    .grid__item--header h1 a {
+    h1.site-logo a {
         margin: auto;
     }
 }
 
 
 /*----- Button Navigation -----*/
-
 .main-navigation {
-    border-bottom: 1px solid #ececec;
+    align-items: center;
     border-top: 1px solid #ececec;
     display: flex;
     flex-direction: row;
