@@ -278,7 +278,7 @@
             // save the info we need to use later for the side_bar
             gmarkers.push(marker);
             // add a line to the side_bar html
-            side_bar_html += '<li><a href="javascript:myclick(' + (gmarkers.length-1) + ')">' + name + '<\/a><\/li><hr><br>';
+            side_bar_html += '<li><a href="javascript:myclick(' + (gmarkers.length-1) + ')">' + name + '<\/a><\/li>';
         }
 
 
@@ -291,24 +291,27 @@
     </script>
 </head>
 <body class="grid" onload="initialize()">
-    <header>
-        <h1 class="site-logo"><a href="https://princeton.edu/engineering">School of Engineering &amp; Applied Science</a></h1>
-        <ul class="main-navigation">
-            <li><a href="https://www.princeton.edu/engineering/undergraduate/engineering-tours/sign-up/"><i class="fa fa-calendar-check-o"></i> Tour Sign Up</a></li>
-            <li><a href="http://princeton.transloc.com/"><i class="fa fa-bus"></i> TigerTracker</a></li>
-            <li><a href="http://www.princeton.edu/main/visiting/aroundcampus/maps/princeton_map.pdf"> <i class="fa fa-file-pdf-o"></i>Campus Map</a></li>
-        </ul>
-    </header>
-<div id='main'>
-    <article><div id="map_canvas"></div></article>
-    <nav><h4>Departments and Centers</h4>
-    <div id="ul_side_bar">
+    <div class="site">
+        <header>
+            <h1 class="site-logo"><a href="https://princeton.edu/engineering">School of Engineering &amp; Applied Science</a></h1>
+            <ul class="main-navigation">
+                <li><a href="https://www.princeton.edu/engineering/undergraduate/engineering-tours/sign-up/"><i class="fa fa-calendar-check-o"></i> Tour Sign Up</a></li>
+                <li><a href="http://princeton.transloc.com/"><i class="fa fa-bus"></i> TigerTracker</a></li>
+                <li><a href="http://www.princeton.edu/main/visiting/aroundcampus/maps/princeton_map.pdf"> <i class="fa fa-file-pdf-o"></i>Campus Map</a></li>
+            </ul>
+        </header>
+        <div id="main">
+            <article>
+                <div id="map_canvas"></div>
+            </article>
+            <nav>
+                <h3>Departments and Centers</h3>
+                <ul id="ul_side_bar"></ul>
+            </nav>
+        </div>
+        <footer>
+            <h2><a href="http://princeton.edu/">Princeton University</a></h2>
+        </footer>
     </div>
-    </nav>
-</div>
-<footer>
-    <div class="footer-item"><a href="http://princeton.edu/"><img class="grid__item--footer-img" src="img/pusig_white_os.png"></a></div>
-</footer>
-
 </body>
 </html>
