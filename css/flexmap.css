@@ -139,6 +139,17 @@ input[type=button] {width: auto; overflow: visible;}
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 
+/* map infowindow styles */
+h4 {
+    font-size: 1.5em;
+    -webkit-margin-after: 1em;
+}
+p {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    -webkit-margin-after: 1em;
+    font-size: 14px;
+}
+
 /*----- Site Layout -----*/
 .site {
     display: -webkit-box;
