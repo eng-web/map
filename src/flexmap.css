@@ -150,6 +150,11 @@ p {
     font-size: 14px;
 }
 
+/*----- Site Styles -----*/
+a {
+    color: #f60;
+}
+
 /*----- Site Layout -----*/
 .site {
     display: flex;
@@ -186,13 +191,18 @@ header > h1 {
     align-items: center;
     border-right: 1px solid #ececec;
     flex: 1;
-    display: flex;
+    display: flex; 
 }
 header > ul {
     flex: 3;
 }
 
 /*----- Site Logo -----*/
+@media (max-width: 768px) {
+    h1.site-logo {
+        padding: 20px;
+    }
+}
 h1.site-logo a {
     background: url('../img/engineering_logo.png') no-repeat 50% 50%;
     display: block;
@@ -205,6 +215,7 @@ h1.site-logo a {
 @media (max-width: 768px) {
     h1.site-logo a {
         margin: 20px auto;
+        padding: 0;
     }
 }
 
