@@ -239,7 +239,7 @@
                 });
 
         // This function picks up the click and opens the corresponding info window
-        function myclick(i) {
+        function seas(i) {
             google.maps.event.trigger(gmarkers[i], "click");
         }
 
@@ -261,7 +261,7 @@
             // save the info we need to use later for the side_bar
             gmarkers.push(marker);
             // add a line to the side_bar html
-            side_bar_html += '<li><a href="javascript:myclick(' + (gmarkers.length-1) + ')">' + name + '<\/a><\/li>';
+            side_bar_html += '<li><a href="javascript:seas(' + (gmarkers.length-1) + ')">' + name + '<\/a><\/li>';
         }
 
 
