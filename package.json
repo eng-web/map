@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/somenode/eng-map.git"
+    "url": "git+https://github.com/eng-web/map.git"
   },
   "author": "josh",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/somenode/eng-map/issues"
+    "url": "https://github.com/eng-web/map/issues"
   },
-  "homepage": "https://github.com/somenode/eng-map#readme",
+  "homepage": "https://github.com/eng-web/map",
   "devDependencies": {
     "autoprefixer": "^6.3.1",
     "cssnext": "^1.8.4",
