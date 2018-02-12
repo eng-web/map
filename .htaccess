@@ -1,0 +1,11 @@
+# This Directive will make Apache look first
+# for "index_good.html" before looking for "index.html"
+DirectoryIndex index_good.html index.html
+
+RewriteEngine On
+#RewriteCond %{HTTP_HOST} ^www\.engineering-map.princeton.edu\.com [NC] 
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.html -f 
+RewriteRule ^(.*)$ $1.html
