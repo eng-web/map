@@ -2,8 +2,13 @@
 # for "index_good.html" before looking for "index.html"
 DirectoryIndex index_good.html index.html
 
+# DISABLE CACHING
+ <IfModule mod_headers.c>
+ 	Header set Cache-Control "no-cache, no-store, must-revalidate"
+ 	Header set Pragma "no-cache"
+ </IfModule>
+
 RewriteEngine On
-#RewriteCond %{HTTP_HOST} ^www\.engineering-map.princeton.edu\.com [NC] 
 RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] 
 RewriteCond %{REQUEST_FILENAME} !-d 
